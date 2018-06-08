@@ -1,0 +1,91 @@
+francisodisi@odisi-laptop:~$ cd mecha/mygit/
+francisodisi@odisi-laptop:~/mecha/mygit$ mkdir star_wars
+francisodisi@odisi-laptop:~/mecha/mygit$ cd star_wars/
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ mkdir the_empire
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ mkdir the_rebellion
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ echo "I AM NOT LORD HELMET" >> darth_vader.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ echo "I used to be beautiful, but then I took an arrow to the knee" >> emperor.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ mv *.txt the_empire/
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ cd ..
+francisodisi@odisi-laptop:~/mecha/mygit$ rm star_wars/
+rm: cannot remove 'star_wars/': Is a directory
+francisodisi@odisi-laptop:~/mecha/mygit$ clear
+francisodisi@odisi-laptop:~/mecha/mygit$ ls
+star_wars
+francisodisi@odisi-laptop:~/mecha/mygit$ clear
+francisodisi@odisi-laptop:~/mecha/mygit$ mkdir star_wars
+francisodisi@odisi-laptop:~/mecha/mygit$ cd star_wars/
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ mkdir tatooine
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ mkdir millenium_falcon
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ mkdir death_star
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ mkdir x_wing
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ mkdir tie_fighter
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ touch luke_skywalker.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ touch old_man_ben.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ touch han_solo.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ touch chewbacca.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ touch leia_organa.txt darth_vader.txt emperor_palpatine.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ ls
+chewbacca.txt    death_star             han_solo.txt     luke_skywalker.txt  old_man_ben.txt  tie_fighter
+darth_vader.txt  emperor_palpatine.txt  leia_organa.txt  millenium_falcon    tatooine         x_wing
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ mv luke_skywalker.txt tatooine/
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ mv old_man_ben.txt tatooine/
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ cd tatooine/
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars/tatooine$ mv old_man_ben.txt obi_wan_kenobi.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars/tatooine$ ls
+luke_skywalker.txt  obi_wan_kenobi.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars/tatooine$ mv ../han_solo.txt .
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars/tatooine$ mv ../chewbacca.txt .
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars/tatooine$ ls
+chewbacca.txt  han_solo.txt  luke_skywalker.txt  obi_wan_kenobi.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars/tatooine$ cd ..
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ mv darth_vader.txt death_star/
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ mv emperor_palpatine.txt  death_star/
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ echo "I AM NOT LORD HELMET" death_star/darth_vader.txt
+I AM NOT LORD HELMET death_star/darth_vader.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ echo "I AM NOT LORD HELMET" >> death_star/darth_vader.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ cat death_star/darth_vader.txt
+I AM NOT LORD HELMET
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ mv tatooine/*.txt millenium_falcon/
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ ls tatooine/
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ ls millenium_falcon/
+chewbacca.txt  han_solo.txt  luke_skywalker.txt  obi_wan_kenobi.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ mv leia_organa.txt death_star/
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ ls death_star/
+\darth_vader.txt  emperor_palpatine.txt  leia_organa.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ ls death_star/
+darth_vader.txt  emperor_palpatine.txt  leia_organa.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ mv millenium_falcon/* death_star/
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ ls millenium_falcon/
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ ls death_star/
+chewbacca.txt    emperor_palpatine.txt  leia_organa.txt     obi_wan_kenobi.txt
+darth_vader.txt  han_solo.txt           luke_skywalker.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ cd death_star/
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars/death_star$ ls
+chewbacca.txt    emperor_palpatine.txt  leia_organa.txt     obi_wan_kenobi.txt
+darth_vader.txt  han_solo.txt           luke_skywalker.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars/death_star$ rm obi_wan_kenobi.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars/death_star$ ls
+chewbacca.txt  darth_vader.txt  emperor_palpatine.txt  han_solo.txt  leia_organa.txt  luke_skywalker.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars/death_star$ mv luke_skywalker.txt leia_organa.txt han_solo.txt chewbacca.txt ../millenium_falcon/
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars/death_star$ ls
+darth_vader.txt  emperor_palpatine.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars/death_star$ cd ../millenium_falcon/
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars/millenium_falcon$ ls
+chewbacca.txt  han_solo.txt  leia_organa.txt  luke_skywalker.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars/millenium_falcon$ mv leia_organa.txt ../
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars/millenium_falcon$ ls ../
+death_star  leia_organa.txt  millenium_falcon  tatooine  tie_fighter  x_wing
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars/millenium_falcon$ mv luke_skywalker.txt ../x_wing/
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars/millenium_falcon$ ls ../x_wing/
+luke_skywalker.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars/millenium_falcon$ ls
+chewbacca.txt  han_solo.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars/millenium_falcon$ cd ..
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ mv death_star/darth_vader.txt  tie_fighter/
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ ls tie_fighter/
+darth_vader.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ rm -rf death_star/
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ ls
+leia_organa.txt  millenium_falcon  tatooine  tie_fighter  x_wing
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$

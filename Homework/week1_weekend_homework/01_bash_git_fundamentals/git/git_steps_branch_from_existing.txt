@@ -1,0 +1,69 @@
+francisodisi@odisi-laptop:~/mecha/mygit$ git clone https://github.com/fodisi/mecha-test
+Cloning into 'mecha-test'...
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 6 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), done.
+Checking connectivity... done.
+francisodisi@odisi-laptop:~/mecha/mygit$ ls
+mecha-test  openREADME.md  own_repo_exercise.txt  README.md
+francisodisi@odisi-laptop:~/mecha/mygit$ cd mecha-test/
+francisodisi@odisi-laptop:~/mecha/mygit/mecha-test$ git checkout -b my_branch_test
+Switched to a new branch 'my_branch_test'
+francisodisi@odisi-laptop:~/mecha/mygit/mecha-test$ ls
+README.md  test.py
+francisodisi@odisi-laptop:~/mecha/mygit/mecha-test$ git checkout mecha-test
+error: pathspec 'mecha-test' did not match any file(s) known to git.
+francisodisi@odisi-laptop:~/mecha/mygit/mecha-test$ cd ..
+francisodisi@odisi-laptop:~/mecha/mygit$ ls
+mecha-test  openREADME.md  own_repo_exercise.txt  README.md
+francisodisi@odisi-laptop:~/mecha/mygit$ cd mecha-test/
+francisodisi@odisi-laptop:~/mecha/mygit/mecha-test$ ls
+README.md  test.py
+francisodisi@odisi-laptop:~/mecha/mygit/mecha-test$ git status
+On branch my_branch_test
+nothing to commit, working directory clean
+francisodisi@odisi-laptop:~/mecha/mygit/mecha-test$ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+francisodisi@odisi-laptop:~/mecha/mygit/mecha-test$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+francisodisi@odisi-laptop:~/mecha/mygit/mecha-test$ git checkout mecha-test
+error: pathspec 'mecha-test' did not match any file(s) known to git.
+francisodisi@odisi-laptop:~/mecha/mygit/mecha-test$ git checkout my_branch_test
+Switched to branch 'my_branch_test'
+francisodisi@odisi-laptop:~/mecha/mygit/mecha-test$ git status
+On branch my_branch_test
+nothing to commit, working directory clean
+francisodisi@odisi-laptop:~/mecha/mygit/mecha-test$ ls
+README.md  test.py
+francisodisi@odisi-laptop:~/mecha/mygit/mecha-test$ echo "print('mecha-test my_branch_test')" >> test.py
+francisodisi@odisi-laptop:~/mecha/mygit/mecha-test$ ls
+README.md  test.py
+francisodisi@odisi-laptop:~/mecha/mygit/mecha-test$ cat test.py
+print('mecha-test my_branch_test')
+francisodisi@odisi-laptop:~/mecha/mygit/mecha-test$ git add .
+francisodisi@odisi-laptop:~/mecha/mygit/mecha-test$ git commit -m "my branch save"
+[my_branch_test 6181aa9] my branch save
+ 1 file changed, 1 insertion(+)
+francisodisi@odisi-laptop:~/mecha/mygit/mecha-test$ git --config user.email "francis2301@gmail.com"
+Unknown option: --config
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+francisodisi@odisi-laptop:~/mecha/mygit/mecha-test$ git config --global user.email "francis2301@gmail.com"
+francisodisi@odisi-laptop:~/mecha/mygit/mecha-test$ git config --global user.name "fodisi"
+francisodisi@odisi-laptop:~/mecha/mygit/mecha-test$ git push origin my_branch_test
+Username for 'https://github.com': fodisi
+Password for 'https://fodisi@github.com':
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 305 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/fodisi/mecha-test
+ * [new branch]      my_branch_test -> my_branch_test

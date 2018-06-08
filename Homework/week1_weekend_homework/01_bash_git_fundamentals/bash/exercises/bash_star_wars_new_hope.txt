@@ -1,0 +1,10 @@
+francisodisi@odisi-laptop:~$ cd mecha/mygit/
+francisodisi@odisi-laptop:~/mecha/mygit$ mkdir star_wars
+francisodisi@odisi-laptop:~/mecha/mygit$ cd star_wars/
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ mkdir the_empire
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ mkdir the_rebellion
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ echo "I AM NOT LORD HELMET" >> darth_vader.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ echo "I used to be beautiful, but then I took an arrow to the knee" >
+> emperor.txt
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$ mv *.txt the_empire/
+francisodisi@odisi-laptop:~/mecha/mygit/star_wars$

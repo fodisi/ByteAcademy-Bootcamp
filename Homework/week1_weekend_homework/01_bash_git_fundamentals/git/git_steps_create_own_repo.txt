@@ -1,0 +1,22 @@
+  GNU nano 2.5.3                       File: own_repo_exercise.txt                                                      
+  596  clear
+  597  mkdir mygit
+  598  cd mygit/
+  599  git init
+  600  touch README.md
+  601  open README.md
+  602  nano README.md
+  603  git add .
+  604  git commit -m "added directory and readme files"
+  605  config --global user.email "francis2301@gmail.com"
+  606  git config --global user.email "francis2301@gmail.com"
+  607  git config --global user.name "fodisi"
+  608  git remote add origin https://github.com/fodisi/mecha_githw.git
+  609  git push origin master
+  610  git remote rm https://github.com/fodisi/mecha_githw.git
+  611  git remote -v
+  612  git remote rm origin
+  613  git remote -v
+  614  git remote add origin https://github.com/fodisi/mecha_githw.git
+  615  git push origin master
+  616  history > own_repo_exercise.txt
