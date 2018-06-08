@@ -1,7 +1,7 @@
 # Downloaded files for web-scrappers
 *.csv.gz
 *.csv
-
+./bitcoin/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
