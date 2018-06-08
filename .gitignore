@@ -1,5 +1,5 @@
 # Downloaded files for web-scrappers
-*.csv.gz
+*.csv.gz*
 *.csv
 bitcoin/
 
