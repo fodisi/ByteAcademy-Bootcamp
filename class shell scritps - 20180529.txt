@@ -1,0 +1,243 @@
+francisodisi@odisi-laptop:~$ python3
+Python 3.5.2 (default, Nov 23 2017, 16:37:01)
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> repl = ['read', 'evaluate', 'print', 'loop']
+>>> #this next part is all about iteration behavior
+...
+>>> for iterator in repl:
+...     print(iterator)
+...
+read
+evaluate
+print
+loop
+>>>
+>>>
+>>>
+>>> #next part about import statements
+...
+>>> ###imports from the standard library
+...
+>>> ##imports from thrid-party modules
+...
+>>> ###imports from local libraries
+...
+>>> import time
+>>>
+>>>
+>>> while True:
+...     time.sleep(1)
+...     print('Hello world')
+...
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+
+Hello world
+Hello world
+^CTraceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+KeyboardInterrupt
+>>>
+>>>
+>>> while 1:
+...     time.sleep(1)
+...     print('Hello world')
+...
+Hello world
+Hello world
+Hello world
+^CTraceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+KeyboardInterrupt
+>>>
+>>>
+>>>
+>>> ###Let's combite control flow and iteration behavior
+...
+>>> for _ in repl:
+...     if _ == 'read':
+...             print(_)
+...
+read
+>>> exit()
+
+
+
+
+francisodisi@odisi-laptop:~$ sudo apt-get -y install wget curl
+[sudo] password for francisodisi:
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+curl is already the newest version (7.47.0-1ubuntu2.7).
+wget is already the newest version (1.17.1-1ubuntu1.4).
+The following package was automatically installed and is no longer required:
+  libfreetype6
+Use 'sudo apt autoremove' to remove it.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+francisodisi@odisi-laptop:~$ man curl
+francisodisi@odisi-laptop:~$
+
+
+
+
+francisodisi@odisi-laptop:~$ ##see ulr
+francisodisi@odisi-laptop:~$ curl "http://google.com"
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="http://www.google.com/">here</A>.
+</BODY></HTML>
+francisodisi@odisi-laptop:~$ wget "http://google.com"
+--2018-05-29 11:41:19--  http://google.com/
+Resolving google.com (google.com)... 172.217.3.110
+Connecting to google.com (google.com)|172.217.3.110|:80... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: http://www.google.com/ [following]
+--2018-05-29 11:41:19--  http://www.google.com/
+Resolving www.google.com (www.google.com)... 172.217.3.100
+Connecting to www.google.com (www.google.com)|172.217.3.100|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘index.html’
+
+index.html                        [ <=>                                              ]  11.54K  --.-KB/s    in 0.004s
+
+2018-05-29 11:41:19 (2.83 MB/s) - ‘index.html’ saved [11819]
+
+francisodisi@odisi-laptop:~$ nano index.html
+francisodisi@odisi-laptop:~$ subl index.html
+No command 'subl' found, did you mean:
+ Command 'subs' from package 'libsubtitles-perl' (universe)
+ Command 'publ' from package 'atfs' (universe)
+subl: command not found
+francisodisi@odisi-laptop:~$
+
+
+francisodisi@odisi-laptop:~/mecha/week1/bitcoin$ master
+No command 'master' found, did you mean:
+ Command 'paster' from package 'python-pastescript' (main)
+ Command 'aster' from package 'code-aster-mpi-engine' (universe)
+ Command 'master1' from package 'pvm-examples' (universe)
+master: command not found
+francisodisi@odisi-laptop:~/mecha/week1/bitcoin$ ls
+autogen.sh  configure.ac  CONTRIBUTING.md  depends  INSTALL.md                 Makefile.am  share  test
+build-aux   contrib       COPYING          doc      libbitcoinconsensus.pc.in  README.md    src
+francisodisi@odisi-laptop:~/mecha/week1/bitcoin$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+francisodisi@odisi-laptop:~/mecha/week1/bitcoin$ git clone https://github.com/francis2301/mecha-test.git
+Cloning into 'mecha-test'...
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+Checking connectivity... done.
+francisodisi@odisi-laptop:~/mecha/week1/bitcoin$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        mecha-test/
+
+nothing added to commit but untracked files present (use "git add" to track)
+francisodisi@odisi-laptop:~/mecha/week1/bitcoin$ cd mecha-test
+francisodisi@odisi-laptop:~/mecha/week1/bitcoin/mecha-test$ touch test.py
+francisodisi@odisi-laptop:~/mecha/week1/bitcoin/mecha-test$ git add test.py
+francisodisi@odisi-laptop:~/mecha/week1/bitcoin/mecha-test$ git commit -m "add touch.py to repository"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <francisodisi@odisi-laptop.localdomain>) not allowed
+francisodisi@odisi-laptop:~/mecha/week1/bitcoin/mecha-test$ git config --global user.email "francis2301@gmail.com"
+francisodisi@odisi-laptop:~/mecha/week1/bitcoin/mecha-test$ git config --global user.name "Francis"
+francisodisi@odisi-laptop:~/mecha/week1/bitcoin/mecha-test$ git commit -m "add touch.py to repository"
+[master 68bbf0b] add touch.py to repository
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test.py
+francisodisi@odisi-laptop:~/mecha/week1/bitcoin/mecha-test$ git push origin master
+Username for 'https://github.com': francis2301
+Password for 'https://francis2301@github.com':
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 283 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/francis2301/mecha-test.git
+   9600823..68bbf0b  master -> master
+francisodisi@odisi-laptop:~/mecha/week1/bitcoin/mecha-test$ history | grep "git"
+   54  git clone https://github.com/bitcoin/bitcoin
+   58  git log | grep "Author"
+   59  git log | grep "Date"
+   62  git status
+   63  git clone https://github.com/francis2301/mecha-test.git
+   64  git status
+   67  git add test.py
+   68  git commit -m "add touch.py to repository"
+   69  git config --global user.email "francis2301@gmail.com"
+   70  git config --global user.name "Francis"
+   71  git commit -m "add touch.py to repository"
+   72  git push origin master
+   73  history | grep "git"
+francisodisi@odisi-laptop:~/mecha/week1/bitcoin/mecha-test$ history | grep "git" > todayclass
+francisodisi@odisi-laptop:~/mecha/week1/bitcoin/mecha-test$ cat todayclass
+   54  git clone https://github.com/bitcoin/bitcoin
+   58  git log | grep "Author"
+   59  git log | grep "Date"
+   62  git status
+   63  git clone https://github.com/francis2301/mecha-test.git
+   64  git status
+   67  git add test.py
+   68  git commit -m "add touch.py to repository"
+   69  git config --global user.email "francis2301@gmail.com"
+   70  git config --global user.name "Francis"
+   71  git commit -m "add touch.py to repository"
+   72  git push origin master
+   73  history | grep "git"
+   74  history | grep "git" > todayclass
+francisodisi@odisi-laptop:~/mecha/week1/bitcoin/mecha-test$
+

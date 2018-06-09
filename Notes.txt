@@ -1,0 +1,252 @@
+General Notes:
+
+byte academy wi-fi
+ssid: ByteStudents
+pwd: 1lovebyte
+
+Subscribe to:
+meetup byteacademy group
+Slacklack
+HackerRank
+
+
+day 1 - 2018-05-29
+apt-get command to download packages (apt-get -y install)
+echo $SHELL >> shows which type of shell is installed
+python3 >> opens python3 command
+python3 FILENAME >> executes a python file
+
+Control Flow (if, elif, else)
+
+Iteration Behavior (for, while)
+
+shows manuals
+man wget
+man curl 
+use 'q' to exit
+
+
+properties for working with data (ETL's): variety, volume, velocity)
+week1: extract
+week2: transform
+week3: load(sql)
+week4: integrate using mvc
+
+
+paradigms
+client/server (request/response)
+message passing (publish/subscribe)
+
+types of requests: get, post, put, patch, delete
+
+responses (see wikipedia list of http status codes)
+
+text editor
+nano FILENAME
+subl FILENAME
+
+ls >> shows files
+ls -a >> shows files including hidden
+mkdir >> creates a folder
+cd FOLDERNAME >> moves to a folder
+pwd >> prints working directory
+whoami >> who your user is
+git clone $URI >> clones the content of a github package to the computer
+git log | grep "Date" >> looks for the dates
+git status >> shows on which branch you are
+grep >> looks for some data
+cat FILENAME >> shows the contents of a list of a file or files
+cat FILE1 FILE2
+cat FILE1 FILE2 > FILE3 (combines 2 files into 1 file)
+cd ~ >> goes to your home directory
+cd ../.. >> goes back 2 directories
+cd .. >> goes back 1 directory
+unzip FILENAME >> unzips a zip file
+
+transmitter >> channel >> receiver == stdin >> channel >> stdout/stderr
+
+
+day 2 - 2018-05-30
+clear && python3 >> executes 2 commands at a time
+mv CURR_NAME NEW_NAME >> renames files or folder names
+rm -r DIRECTORY >> removes directory and all subfolders / files
+mv FINENAME FILENAME >> renames a file
+mv FINENAME DIRECTORY >> moves a file to directory
+cp DIRECTORY DIRECTORY >> copies a directory to another directory
+rm filename >> deletes a file PERMANENTLY
+rm -r DIRECTORY >> deletes a directory PERMANENTLY
+rm -rf DIRECTORY >> deletes a directory PERMANENTLY skiping questions about deleting files that are hidden, owned by others, etc.
+touch INEXISTING_FILE >> creates a new file
+touch EXISTING_FILE >> open and closes a file, updating timestamps, etc.
+
+
+
+Python 
+"__" >> dunder
+__SOMETHING__ >> magic method
+__name__ == '__main__': >> called as main dunder
+cp SOURCE DESTINATION >> copies the content of source into destination
+
+
+
+
+day 3 - 2018-05-31
+HTML
+books - Grokking Algorithms, Cracking the code interview
+http://api.bitcoincharts.com/v1/csv/
+gdeltproject.org
+
+
+DATA SCIENCE
+hot to lie in statistics
+fast.ai (course about deep learning for coders)
+making neural nets uncool again
+
+
+BLOCKCHAIN
+an open letter to the ethereum community (pastebin.com)
+remix.ethereum.org -- editor for ethereum smart contracts
+
+
+monday morning presentation
+
+
+
+
+DAY 4 - 2018-06-01
+3blue1brown
+numberphile
+computerphile
+60symbols(?)
+2sPhysics!
+MathTheBeautiful
+
+
+
+interview question banks
+
+
+
+numerai
+
+
+2018-06-07
+
+Types of data
+- structured: sql
+- semi-structured: html, xml
+- unstructured: images, videos
+
+
+forecasting
+nowcasting
+backcasting
+
+
+Intel Optane
+
+read wikipedia articles:
+object-relational impedence mismatch
+hasse-diagram >> tamari lattice
+
+
+
+language>>implementation>>theory
+scripting-language >> python >> graph >> cyclic graphs
+domain-specific-language>>sql>>set >> tabular data
+(this is called the Vietnam of computer science)
+
+
+
+Linear algebra: Udacity course: Linear Algebra Refresher
+Finite Dimensional Vector Spaces by Paul Halmos
+
+
+periscopedata.com >> courses about sql in:
+	- financial markets
+	- geolocation
+	- advanced sql
+
+	
+SQL
+theory			practice
+c-create 		create table users (pk integer primary key autoincrement, username varchar unique);
+r-read			select username from users where username = 'kenso';
+u-update		insert into users (username) values ('carter');
+d-delete		drop users;
+
+
+
+
+
+
+job-hunting
+linkedin
+resumes
+treat job-searching like a full time job
+built out resume and linkedin
+have a gmail account, not hotmail
+use some color in your resume, for tech jobs / tech companies (morgan stanley, likes traditional
+canva.com (for resume templates with color schemes)
+list your github link on your resume and commit files everyday, so your bar turns green
+linkedin
+
+
+searches
+careerbuilding (dont go)
+dice, linkedin are good for tech jobs
+
+hackerrank
+make contests and make sure you get to top 20 percentile
+
+try to do devweek and hackathons
+
+try to have something in your resume for current job, it doesn't matter what kind or payrate
+know binary search tree and data structures
+
+Create a profile at UPWORK and try to get jobs from there
+web crawlers and web scrappers
+bigO notation
+publish things on quora, medium and forums
+
+write down the interview questions and learn how to solve them
+
+BOOK - cracking the coding interview
+job.tracker
+prempt live interview
+
+
+
+week2 - day 5 - 2018-06-08
+SQLITE
+sqlite3 DBNAME.db //creates or open a DBNAME
+.quit >> quits sqlite3
+
+unix
+ls -l >> list files/directories and permissions
+chmod +x FILENAME >> gives execution rights to a file
+wc -l rippleUSD.csv >> shows the number of lines in a file
+gunzip ZIPFILENAME >> unzips a file
+
+
+downloads a file from a link using bash:
+wget --user-agent="Mozilla/5.0" FILE_LINK -O DIRECTORY/FILENAME
+wget --user-agent="Mozilla/5.0" http://api.bitcoincharts.com/v1/csv/rippleUSD.csv.gz -O ./rippleUSD.csv.gz
+
+
+
+Shell Script
+creates a shell scrypt file that can run multiple bash commands
+
+FILENAME -----------run.sh -----------------
+
+#!/usr/bin/env bash
+
+rm securities_master.db
+echo 'Database deleted'
+python3 schema.py
+echo 'Schema defined'
+python3 seed.py
+echo 'data seeded'
+
+--------------------------------------------
