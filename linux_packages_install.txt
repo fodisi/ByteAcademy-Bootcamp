@@ -44,5 +44,3 @@ python3 -m pip3 install --upgrade pip3
    57  pip3 install bs4
    59  pip3 install requests
    60  pip3 install zip
-
-
