@@ -24,6 +24,9 @@
 41  sudo apt-get install vim
 55  sudo python3 -m pip uninstall pip && sudo apt install python3-pip --reinstall
 58  sudo apt-get install curl
+
+sudo apt-get install tree
+
 72  history | grep "apt"
 
 
@@ -44,3 +47,6 @@ python3 -m pip3 install --upgrade pip3
    57  pip3 install bs4
    59  pip3 install requests
    60  pip3 install zip
+
+
+

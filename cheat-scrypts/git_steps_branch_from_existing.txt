@@ -1,12 +1,4 @@
 francisodisi@odisi-laptop:~/mecha/mygit$ git clone https://github.com/fodisi/mecha-test
-Cloning into 'mecha-test'...
-remote: Counting objects: 6, done.
-remote: Compressing objects: 100% (3/3), done.
-remote: Total 6 (delta 0), reused 3 (delta 0), pack-reused 0
-Unpacking objects: 100% (6/6), done.
-Checking connectivity... done.
-francisodisi@odisi-laptop:~/mecha/mygit$ ls
-mecha-test  openREADME.md  own_repo_exercise.txt  README.md
 francisodisi@odisi-laptop:~/mecha/mygit$ cd mecha-test/
 francisodisi@odisi-laptop:~/mecha/mygit/mecha-test$ git checkout -b my_branch_test
 Switched to a new branch 'my_branch_test'

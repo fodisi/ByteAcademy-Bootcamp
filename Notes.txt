@@ -238,6 +238,9 @@ wget --user-agent="Mozilla/5.0" http://api.bitcoincharts.com/v1/csv/rippleUSD.cs
 Shell Script
 creates a shell scrypt file that can run multiple bash commands
 
+./run.sh >> runs a .sh file
+
+
 FILENAME -----------run.sh -----------------
 
 #!/usr/bin/env bash
