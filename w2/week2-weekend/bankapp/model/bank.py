@@ -4,7 +4,7 @@
 from branch import Branch
 
 
-"""Representation of a Bank"""
+"""Represents a Bank"""
 class Bank():
 	def __init__(self, id_=0, name="", branches={}):
 		self.id = id_

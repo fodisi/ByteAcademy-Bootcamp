@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-"""Representation a Person"""
+"""Represents a Person"""
 class Person():
 	def __init__(self, id_=0, name='', email='', person_type=''):
 		self.id = id_

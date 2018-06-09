@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-"""Representation of a bank Branch"""
+"""Represents a bank Branch"""
 class Branch():
 	def __init__(self, id_=0, name=""):
 		self.id = id_
@@ -9,5 +9,9 @@ class Branch():
 		self.accounts = {}
 
 
-	def create_account(self, account)
+	def create_account(self, account):
 		self.accounts[account.number] = account
+
+
+	def account_exists(self, number):
+		return number in self.accounts
