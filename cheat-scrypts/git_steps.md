@@ -64,6 +64,22 @@
 * `git checkout master` - moves to the master branch
 * `git show-branch -r` - shows remote branches
 * `git show-branch -a` - shows all branches
+* `git push origin master` - pushes the content from the master branch to the remote origin
+
+
+### Removing local files (untracked) and DELETING them
+
+* `git clean -n` - Step 1 is to show what will be deleted by using the -n option:
+* `git clean -f` - Clean Step - beware: this will delete files:
+* `git clean -f -d` or `git clean -fd` - To remove directories
+* `git clean -f -X` or `git clean -fX` - To remove ignored files
+* `git clean -f -x` or `git clean -fx` - To remove ignored and non-ignored files
+
+### Remove files from staging area
+* `git rm --cached <file_name>` - Here, we are using the rm command along with switch --cached which indicates the file to be removed from the staging or cached area.
+
+### Undo Commit, on local branch
+* `git reset --soft HEAD^1` - the latest commit. if you do git status you will see files in the staging area.
 
 
 ---
