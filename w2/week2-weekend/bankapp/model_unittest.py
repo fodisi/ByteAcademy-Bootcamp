@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 
 
-from bankapp.model import Bank, Branch, Account
-from bankapp.dal import BankDAL
+from model.bank import Bank
+from model.branch import Branch
+from model.account import Account
+#from dal import BankDAL
 
 
 if __name__ == '__main__':
@@ -18,14 +20,22 @@ if __name__ == '__main__':
 	print('branch {0} exists? {1}'.format(2, bank.branch_exists(2)))
 
 	account = Account(1234)
+
+	account.withdrawal(1, '2018-06-08', 'w1', 100)
+	account.deposit(1, '2018-06-01', 'd1', 1000)
+	account.deposit(1, '2018-06-09', 'd2', 500)
 	
-	account.deposit(1, '2018-06-09', 'd1', 1000)
-	account.deposit(1, '2018-06-09', 'd1', 500)
-	
-	account.withdrawal(1, '2018-06-09', 'd1', 100)
 	
 	branch.create_account(account)
 	
 	print('account balance: {0}'.format(account.get_balance()))
 	
+	tx = account.get_transaction_history()
+	for i in tx:
+		print("{date}, {tx_id}, {description}, {amount}, {tx_type}".format(
+				date=i.date, 
+				tx_id=i.id,
+				description=i.description, 
+				amount=i.amount, 
+				tx_type=i.type))
 	

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-from branch import Branch
+from model.branch import Branch
 
 
 """Represents a Bank"""
@@ -13,6 +13,7 @@ class Bank():
 
 
 	def add_branch(self, branch):
+		branch.bank_id = self.id
 		self.branches[branch.id] = branch
 
 

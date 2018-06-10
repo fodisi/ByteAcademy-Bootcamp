@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-from person import Person
+from model.person import Person
 
 
 """Represents a bank Client"""

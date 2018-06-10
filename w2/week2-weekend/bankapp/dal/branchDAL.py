@@ -5,13 +5,15 @@ from dal.baseDAL import BaseDAL
 
 
 """Represents an instance of a Bank"""
-class BankDAL(BaseDAL):
+class BranchDAL(BaseDAL):
 	def __init__(self):
 		super().__init__()
 
+
 	def prepare_insert(self, obj):
-		return 	"""INSERT INTO banks(name) VALUES ('{name}');
-				""".format(name=obj.name)
+		return 	"""INSERT INTO branch(bank_id, name)
+				VALUES ({bank_id}, '{name}');
+				""".format(bank_id=, name=obj.name)
 
 	def prepare_update(self, obj):
 		return 	"""UPDATE banks SET name='{name}' WHERE id={id_};

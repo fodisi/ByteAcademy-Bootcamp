@@ -1,11 +1,11 @@
-#!/usr/bin/env python3
+# #!/usr/bin/env python3
 
-__all__ = ["bank", "branch"]
+# __all__ = ["bank", "branch"]
 
-from bank import Bank
-from branch import Branch
-from account import Account
-from person import Person
-from client import Client
-from manager import Manager
-from transaction import Transaction
+# from model.bank import Bank
+# from model.branch import Branch
+# from model.account import Account
+# from model.person import Person
+# from model.client import Client
+# from model.manager import Manager
+# from model.transaction import Transaction
