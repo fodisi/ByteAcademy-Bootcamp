@@ -22,7 +22,7 @@ class BaseDAL(ABC):
 		pass
 
 	@abstractmethod
-	def prepare_select(self, id_):
+	def prepare_select(self, identifier):
 		pass
 
 	@abstractmethod
@@ -34,18 +34,22 @@ class BaseDAL(ABC):
 		pass
 
 
-	def __execute_non_query(self, sql_command):
-		# create a connection to the database
+	def execute_non_query(self, sql_command):
+		# creates a connection to the database
 		with db.connect(self.DB_NAME, check_same_thread=False) as conn:
 			cursor = conn.cursor()
+			"""SQLite3 requires that this command be executed to active
+			Foreign Key constrains
+			Link: https://www.sqlite.org/foreignkeys.html#fk_enable"""
+			cursor.execute("PRAGMA foreign_keys = ON;")
 			#executes and commits the sql command
 			cursor.execute(sql_command)
 			conn.commit()
 			cursor.close()
 	
 	
-	def __execute_query(self, sql_command):
-		# create a connection to the database
+	def execute_query(self, sql_command):
+		# creates a connection to the database
 		with db.connect(self.DB_NAME, check_same_thread=False) as conn:
 			cursor = conn.cursor()
 			#executes sql command and returns fetched data
@@ -55,22 +59,24 @@ class BaseDAL(ABC):
 
 	def insert(self, obj):
 		sql_command = self.prepare_insert(obj)
-		self.__execute_non_query(sql_command)
+		self.execute_non_query(sql_command)
 
 	def update(self, obj):
 		sql_command = self.prepare_update(obj)
-		self.__execute_non_query(sql_command)
+		self.execute_non_query(sql_command)
 
 	def delete(self, obj):
 		sql_command = self.prepare_delete(obj)
-		self.__execute_non_query(sql_command)
+		self.execute_non_query(sql_command)
 
-	def select(self, id_):
-		#gets the sql command from the inherited class
-		sql_command = self.prepare_select(id_)
-		#executes the command and fetches into result
-		result = self.__execute_query(sql_command)
-		#result receives a list of rows. Need the first row.
+	def select(self, identifier):
+		# Gets the sql command from the inherited class
+		sql_command = self.prepare_select(identifier)
+		
+		# Executes the command and fetches into result
+		result = self.execute_query(sql_command)
+		
+		# Result receives a list of rows. Only needs the first row.
 		if len(result) > 0:
 			return self.to_object(result[0])
 		else:
@@ -78,7 +84,8 @@ class BaseDAL(ABC):
 
 	def select_all(self):
 		sql_command = self.prepare_select_all()
-		return self.to_list(self.__execute_query(sql_command))
+		result = self.execute_query(sql_command)
+		return self.to_list(result)
 
 	def to_list(self, rows):
 		objects = []
