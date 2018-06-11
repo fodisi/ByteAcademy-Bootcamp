@@ -12,7 +12,7 @@ class LoginView(BaseView):
 		login, pwd = '', ''
 		
 		print(34 * '#')
-		print('# {0:<30} #'.format('Login:'))
+		print('# {0:^30} #'.format('LOGIN'))
 		print(34 * '#')
 		print()
 		

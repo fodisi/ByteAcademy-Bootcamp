@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 
+from datetime import datetime
+
 from model.transaction import Transaction
 from model.client import Client
 
@@ -11,25 +13,35 @@ class Account():
 		self.number = number
 		self.branch_id = branch_id
 		self.client = client
-		self.__transactions = []
+		self.transactions = []
 
 
-	def deposit(self, tx_id, date, description, amount):
-		tx = Transaction(tx_id, date, description, amount, 'D', self.number)
-		self.__transactions.append(tx)
+	def deposit(self, date, description, amount):
+		tx = Transaction(date = date,
+						 description = description, 
+						 amount = amount, 
+						 tx_type = 'D',
+						 account_number = self.number)
+		self.transactions.append(tx)
+		return tx
 		
 
-	def withdrawal(self, tx_id, date, description, amount):
-		tx = Transaction(tx_id, date, description, amount * -1, 'W', self.number)
-		self.__transactions.append(tx)
+	def withdrawal(self, date, description, amount):
+		tx = Transaction(date = date,
+						 description = description, 
+						 amount = amount * -1, 
+						 tx_type = 'W',
+						 account_number = self.number)
+		self.transactions.append(tx)
+		return tx
 	
 
 	def get_balance(self):
-		return sum(tx.amount for tx in self.__transactions)
+		return sum(tx.amount for tx in self.transactions)
 
 
 	def get_transaction_history(self):
-		history = self.__transactions[::]
+		history = self.transactions[::]
 		history.sort(key=lambda x: x.date)
 		return history
 			

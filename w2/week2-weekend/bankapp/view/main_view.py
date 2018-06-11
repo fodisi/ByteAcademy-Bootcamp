@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 
+from model.account import Account
+from model.person import Person
 from view.base_view import BaseView
 
 
@@ -12,10 +14,12 @@ class MainView(BaseView):
 		self.clear()
 		if profile == 'admin':
 			self.show_admin_menu()
-		if profile == 'manager':
-			self.show_manager_menu()
-		if profile == 'client':
-			self.show_client_menu()
+		elif isinstance(profile, Person):
+			self.show_manager_menu(profile)
+		elif isinstance(profile, Account):
+			self.show_client_menu(profile)
+		else:
+			raise Exception('Invalid profile "{0}"'.format(profile))
 			
 		try:
 			print('Your option:')
@@ -28,6 +32,10 @@ class MainView(BaseView):
 	
 	def show_admin_menu(self):
 		print(34 * '#')
+		print('# {0:^30} #'.format('WELCOME'))
+		print('# {0:^30} #'.format('Profile: ADMIN'))
+		print(34 * '#')
+		#Prints menu options
 		print('# {0:<30} #'.format('Choose an option:'))
 		print('# {0:<30} #'.format('100 - Create Branch'))
 		print('# {0:<30} #'.format('101 - View Branch List'))
@@ -37,7 +45,11 @@ class MainView(BaseView):
 		print(34 * '#')
 		print()
 
-	def show_manager_menu(self):
+	def show_manager_menu(self, manager):
+		print(34 * '#')
+		welcome_message = 'WELCOME, {0}'.format(manager.name)
+		print('# {0:^30} #'.format(welcome_message))
+		print('# {0:^30} #'.format('Profile: MANAGER'))
 		print(34 * '#')
 		print('# {0:<30} #'.format('Choose an option:'))
 		print('# {0:<30} #'.format('200 - Create Account'))
@@ -47,8 +59,19 @@ class MainView(BaseView):
 		print()
 
 	
-	def show_client_menu(self):
+	def show_client_menu(self, account):
+		#Prints header
 		print(34 * '#')
+		welcome_message = 'WELCOME, {0}'.format(account.client.name)
+		print('# {0:^30} #'.format(welcome_message))
+		print(34 * '#')
+		print('# {0:<30} #'.format("YOUR'RE CONNECTED TO:"))
+		branch_info = 'Branch: {0:07d}'.format(account.branch_id)
+		account_info = 'Account Number: {0:07d}'.format(account.number)
+		print('# {0:<30} #'.format(branch_info))
+		print('# {0:<30} #'.format(account_info))
+		print(34 * '#')
+		#Prints menu options
 		print('# {0:<30} #'.format('Choose an option:'))
 		print('# {0:<30} #'.format('1 - Deposit'))
 		print('# {0:<30} #'.format('2 - Withdrawal'))

@@ -16,7 +16,7 @@ class BaseView():
 		if clean_screen == True:
 			BaseView.clear_screen()
 		
-		print('{0}:\n{1}\n'.format(title, message))
+		print('{0}:\n{1}\n'.format(title.upper(), message))
 		print('Press ENTER to continue...')
 		input()
 

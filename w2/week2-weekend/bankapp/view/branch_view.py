@@ -11,7 +11,7 @@ class BranchView(BaseView):
 		self.clear()
 		
 		print(34 * '#')
-		print('# {0:<30} #'.format('Create new branch:'))
+		print('# {0:^30} #'.format('CREATE NEW BRANCH:'))
 		print(34 * '#')
 		print()
 		print('Type the branch name:')
@@ -20,7 +20,7 @@ class BranchView(BaseView):
 	def view_branches(self, branches):
 		self.clear()
 		print(44 * '#')
-		print('# {0:<40} #'.format('List of Branches:'))
+		print('# {0:^40} #'.format('BRANCH LIST:'))
 		print(44 * '#')
 		print('# {0:<40} #'.format(''))
 		print('# {0:<7} | {1:<31}#'.format('Id', 'Name'))

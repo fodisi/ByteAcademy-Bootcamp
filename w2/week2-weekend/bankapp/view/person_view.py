@@ -13,8 +13,8 @@ class PersonView(BaseView):
 		
 		print(34 * '#')
 		
-		title = 'Create new {0}:'.format(role)
-		print('# {0:<30} #'.format(title))
+		title = 'CREATE NEW {0}:'.format(role.upper())
+		print('# {0:^30} #'.format(title))
 		print(34 * '#')
 		print()
 		print('Type the name:')
@@ -31,8 +31,8 @@ class PersonView(BaseView):
 	def view_people(self, people, role):
 		self.clear()
 		print(80 * '#')
-		title = 'List of {0}:'.format(role)
-		print('# {0:<76} #'.format(title))
+		title = '{0} LIST:'.format(role.upper())
+		print('# {0:^76} #'.format(title))
 		print(80 * '#')
 		print('# {0:<76} #'.format(''))
 		print('# {0:<7} | {1:<20} | {2:<20} | {3:<20} #'.format(

@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
 
 from controller.main_controller import MainController
-from view.main_view import MainView
+from view.base_view import BaseView
 
 
 def print_menu():
 	print(34 * '#')
-	print('# {0:<30} #'.format('Welcome to Terminal Bank!'))
+	#TODO center main main
+	print('# {0:^30} #'.format('WELCOME TO TERMINAL BANK'))
 	print(34 * '#')
 	print('# {0:<30} #'.format(''))
 	print('# {0:<30} #'.format('Choose an option:'))
 	print('# {0:<30} #'.format('1 - Login'))
-	print('# {0:<30} #'.format('0 - Close application'))
+	print('# {0:<30} #'.format('0 - Close'))
 	print('# {0:<30} #'.format(''))
 	print(34 * '#')
 	print()
@@ -19,32 +20,22 @@ def print_menu():
 
 if __name__ == '__main__':
 	
-	view = MainView()
-	controller = MainController(view)
+	controller = MainController()
 	
 	close_app = False
 	while not close_app:
-		view.clear()
+		BaseView.clear_screen()
 		print_menu()
-		if input() != '0':
+		choice = input()
+		if choice == '0':
+			close_app = True
+		elif choice == '1':
 			controller.start_session()
 		else:
-			close_app = True
+			BaseView.clear_screen()
+			print('\nInvalid option.\n')
+			print('Press ENTER to try again...')
+			input()
+			
 	
-	view.clear()
-
-
-
-	#main_view.show_main_menu()
-	
-
-
-	
-	
-
-	
-	
-
-	#print(bank.name)
-	#dal = BankDAL(bank)
-	#dal.print_model()
+	BaseView.clear_screen()

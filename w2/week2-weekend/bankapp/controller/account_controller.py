@@ -4,12 +4,14 @@
 from view.account_view import AccountView
 from dal.client_accountDAL import ClientAccountDAL
 from dal.accountDAL import AccountDAL
+from dal.transactionDAL import TransactionDAL
 from model.client import Client
 from model.account import Account
 
 class AccountController():
 	def __init__(self):
 		self.view = AccountView()
+
 
 	def __to_client_object(self, data):
 		return Client(name=data['name'], 
@@ -32,9 +34,8 @@ class AccountController():
 			client_dal = ClientAccountDAL()
 
 			try:
-				# inserts account into DB
+				# inserts account and client into DB
 				account_dal.insert(account)
-				#Inserts client into DB
 				client_dal.insert(client)
 				# Gets client from DB to refresh its ID info
 				client = client_dal.select_by_login(client.login)
@@ -47,30 +48,69 @@ class AccountController():
 				account_dal.delete(account)
 				raise
 			
-			message = 'Branch|Account: "{0}|{1}" for client "{2}" for  inserted successfully.'
-			self.view.show_message('Success', 
-									message.format(
-										account.number, 
-										account.branch_id, 
-										client.name), 
-									True
-								  )
+			message = 'Branch|Account: "{0}|{1}" for client "{2}" created successfully.'
+			message = message.format(account.number, account.branch_id, client.name)
+			self.view.show_message('Success', message, True)							
 		except Exception as e:
+			msg_pattern = '{0}\n{1}\n\n{2}'
 			main_message = 'Error inserting data into database'
 			detail_message = 'Check if branch exists or if account number is already in use.'
-			self.view.show_message('Error',
-								   '{main}\n{detail}\n\n{error}'.format(
-										main = main_message,
-										detail = detail_message,
-										error = e.args[0]),
-								   True)
+			msg = msg_pattern.format(main_message, detail_message, e.args[0])
+			self.view.show_message('Error', msg, True)
+
 
 	def list_client_accounts(self):
 		try:
-			print('create dal')
 			dal = ClientAccountDAL()
-			print('selecting accoutns')
 			accounts = dal.select_all_client_accounts()
 			self.view.view_client_accounts(accounts)
 		except Exception as e:
 			self.view.show_message('Error', e.args[0], True)
+
+
+	def create_transaction(self, account, tx_type):
+		try:
+			data = self.view.create_transaction(tx_type)
+			
+			transaction = None
+			if tx_type == 'Deposit':
+				transaction = account.deposit(
+								date=data['date'], 
+								description=data['description'], 
+								amount=data['amount']
+							  )
+			elif tx_type == 'Withdrawal':
+				transaction = account.withdrawal(
+								date=data['date'], 
+								description=data['description'],
+								amount=data['amount']
+							  )
+			else:
+				msg = 'Invalid transaction type "{0}".'
+				raise Exception(msg.format(tx_type))
+			
+			transaction_dal = TransactionDAL()
+			transaction_dal.insert(transaction)
+			
+			message = 'Transaction recorded successfully.'
+			self.view.show_message('Success', message, True)
+		except Exception as e:
+			main_message = 'Error inserting data into database'
+			msg = '{0}\n\n{1}'.format(main_message, e.args[0])
+			self.view.show_message('Error', msg, True)
+
+
+	def list_statement(self, account):
+		try:
+			self.view.view_statement(account)
+		except Exception as e:
+			self.view.show_message('Error', e.args[0], True)
+	
+	
+	def list_balance(self, account):
+		try:
+			self.view.view_balance(account)
+		except Exception as e:
+			self.view.show_message('Error', e.args[0], True)
+
+
