@@ -1,0 +1,6 @@
+sudo apt-get install ipython3
+sudo apt-get install ipython3-notebook
+pip3 install numpy pandas matplotlib
+
+#start jupyter
+ipython3 notebook 

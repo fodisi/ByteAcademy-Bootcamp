@@ -1,0 +1,12 @@
+git add .
+git commit -m "added directory and readme files"
+config --global user.email "francis2301@gmail.com"
+git config --global user.email "francis2301@gmail.com"
+git config --global user.name "fodisi"
+git remote add origin https://github.com/fodisi/mecha_githw.git
+git pull origin master
+git push origin master
+git remote rm https://github.com/fodisi/mecha_githw.git
+git remote -v
+git remote rm origin
+

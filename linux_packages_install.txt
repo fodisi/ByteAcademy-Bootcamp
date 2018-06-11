@@ -1,0 +1,52 @@
+4  sudo apt-get update
+5  sudo apt-get upgrade
+6  sudo apt-get install git
+7  sudo apt-get update
+8  sudo apt-get install python3.6
+9  sudo apt-get upgrade python3.6
+11  sudo apt-get install numpy
+12  sudo apt-get install python-numpy
+13  sudo apt-get install python-scipy
+14  sudo apt-get install python
+15  sudo apt-get install python3-scipy
+16  sudo apt-get install python3-numpy
+17  sudo apt-get install python3-matplotlib
+18  sudo apt-get install python3-pandas
+22  sudo apt-get install python3-pip
+27  sudo apt-get install testresources
+29  sudo apt install python3-pip
+35  apt-get install curl
+36  sudo apt-get install curl
+37  sudo apt-get install gunzip
+38  sudo apt-get install GunZip
+39  sudo apt-get install gzip
+40  sudo apt-get install -y sqlite3
+41  sudo apt-get install vim
+55  sudo python3 -m pip uninstall pip && sudo apt install python3-pip --reinstall
+58  sudo apt-get install curl
+
+sudo apt-get install tree
+
+72  history | grep "apt"
+
+
+python3 -m pip3 install --upgrade pip3
+20  python3 -m pip install --upgrade pip
+21  python3 -m pip install
+   22  sudo apt-get install python3-pip
+   23  pip -v
+   24  python3 -m pip install --upgrade pip
+   25  python3 -m pip install jupyter
+   26  sudo python3 -m pip install jupyter
+   28  pip check
+   29  sudo apt install python3-pip
+   30  pip3 check
+   54  pip3 install bsd
+   55  sudo python3 -m pip uninstall pip && sudo apt install python3-pip --reinstall
+   56  pip3 install bsd
+   57  pip3 install bs4
+   59  pip3 install requests
+   60  pip3 install zip
+
+
+
