@@ -94,4 +94,4 @@ class BaseDAL(ABC):
 			if obj != None:
 				objects.append(obj)
 		
-		return objects;
+		return objects
