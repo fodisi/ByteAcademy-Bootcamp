@@ -1,6 +1,8 @@
 project ideas
 
-a company who helps with arbitrage for retail customers - has accounts in different exchanges and allows users to buy/sell crypto at the lowest/biggest prices in different exchanges
+- a company who helps with arbitrage for retail customers - has accounts in different exchanges and allows users to buy/sell crypto at the lowest/biggest prices in different exchanges
+- a collectible album, where people can 
+
 
 
 twitter

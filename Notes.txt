@@ -62,6 +62,10 @@ cd ~ >> goes to your home directory
 cd ../.. >> goes back 2 directories
 cd .. >> goes back 1 directory
 unzip FILENAME >> unzips a zip file
+whoami >> shows the current username
+htop
+
+
 
 transmitter >> channel >> receiver == stdin >> channel >> stdout/stderr
 
@@ -78,7 +82,7 @@ rm -r DIRECTORY >> deletes a directory PERMANENTLY
 rm -rf DIRECTORY >> deletes a directory PERMANENTLY skiping questions about deleting files that are hidden, owned by others, etc.
 touch INEXISTING_FILE >> creates a new file
 touch EXISTING_FILE >> open and closes a file, updating timestamps, etc.
-
+mkdir -p folder/subfolder >> creates a direcory with a path, creating the subfolders
 
 
 Python 
@@ -253,3 +257,35 @@ python3 seed.py
 echo 'data seeded'
 
 --------------------------------------------
+
+
+postgres
+sudo su - postgres >> opens postgres
+psql >> opens plsql query window
+create user USER with password 'PASSWORD'; >> creates new user in postgresdb
+\du >> show users
+\dd >> show databases
+\q >> quits plsql
+exit >> exits postgres
+
+psql DATABASENAME >> opens plsql for the database
+\dt >> shows the tables in a database
+
+
+
+cmatrix
+
+ps -axf
+
+
+
+TMUX
+CTRL+B SHIFT+% >> splits screen vertically
+CTRL+B SHIFT+" (quote) >> splits screen horizontally
+CTRL+B <directonal arrow <- -> up, down>
+CTRL+B + : >> resize-pane -L 30 >> increases the size on the left
+CTRL+B + { >> move the current pane left
+CTRL+B + } >> move the current pane right
+
+
+

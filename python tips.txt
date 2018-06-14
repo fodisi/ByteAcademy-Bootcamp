@@ -1,0 +1,15 @@
+vagrant >> virtual box server, no ui, only for server
+
+sublime
+editor com suporte para pep8 e autocomplete
+
+Debugger python PDB (import pdb; set trace)
+
+sql_alchemy >> ORM for python
+
+Django >> webserver, ORM -> Object Relational Model () and user permission administration, MVC
+
+flask >> webserver para microservices
+
+
+ansible >> tech for devops
