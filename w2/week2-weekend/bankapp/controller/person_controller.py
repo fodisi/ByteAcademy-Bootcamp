@@ -6,6 +6,7 @@ from dal.personDAL import PersonDAL
 from model.manager import Manager
 from model.client import Client
 
+
 class PersonController():
 	def __init__(self):
 		self.view = PersonView()

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 from dal.personDAL import PersonDAL
 from dal.client_accountDAL import ClientAccountDAL
 from controller.branch_controller import BranchController
