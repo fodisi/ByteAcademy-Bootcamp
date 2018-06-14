@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 
 
-from model.branch import Branch
 from dal.baseDAL import BaseDAL
+from model.branch import Branch
 
 
 """Represents an instance of a Bank"""
+
+
 class BranchDAL(BaseDAL):
 
-	def prepare_insert(self, obj):
-		return 	"""INSERT INTO branches
+    def prepare_insert(self, obj):
+        return """INSERT INTO branches
 				(
 					name
 				)
@@ -18,11 +20,11 @@ class BranchDAL(BaseDAL):
 					'{name}'
 				);
 				""".format(
-						name=obj.name
-					)
+            name=obj.name
+        )
 
-	def prepare_update(self, obj):
-		return 	"""
+    def prepare_update(self, obj):
+        return """
 				UPDATE 
 					branches
 				SET 
@@ -30,22 +32,22 @@ class BranchDAL(BaseDAL):
 				WHERE
 					id={id_};
 				""".format(
-						name=obj.name,
-						id_=obj.id
-					)
+            name=obj.name,
+            id_=obj.id
+        )
 
-	def prepare_delete(self, obj):
-		return 	"""
+    def prepare_delete(self, obj):
+        return """
 				DELETE FROM
 					branches
 				WHERE
 					id={id_};
 				""".format(
-						id_=obj.id
-					)
+            id_=obj.id
+        )
 
-	def prepare_select(self, identifier):
-		return	"""
+    def prepare_select(self, identifier):
+        return """
 				SELECT
 					id,
 					name
@@ -54,20 +56,20 @@ class BranchDAL(BaseDAL):
 				WHERE
 					id={id};
 				""".format(
-						id_ = identifier
-					)
+            id_=identifier
+        )
 
-	def prepare_select_all(self):
-		return 	"""
+    def prepare_select_all(self):
+        return """
 				SELECT
 					id,
 					name
 				FROM
 					branches;
 				"""
-	
-	def to_object(self, row):
-		if len(row) > 0:
-			return (Branch(id_ = int(row[0]), name = row[1]))
-		
-		return None
+
+    def to_object(self, row):
+        if len(row) > 0:
+            return (Branch(id_=int(row[0]), name=row[1]))
+
+        return None

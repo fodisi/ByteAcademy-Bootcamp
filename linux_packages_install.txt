@@ -53,5 +53,6 @@ sudo apt-get -y install postgresql postgresql-contrib
 sudo apt-get install htop >> app to see running processes (F5 shows the tree structure)
 sudo apt-get install tmux
 sudo apt-get install cmatrix
+sudo apt-get install cowsay
 
 
