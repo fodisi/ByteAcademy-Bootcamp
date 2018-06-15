@@ -5,16 +5,17 @@ from view.base_view import BaseView
 
 
 def print_menu():
-	print(34 * '#')
+	print(80 * '#')
 	#TODO center main main
-	print('# {0:^30} #'.format('WELCOME TO TERMINAL BANK'))
-	print(34 * '#')
-	print('# {0:<30} #'.format(''))
-	print('# {0:<30} #'.format('Choose an option:'))
-	print('# {0:<30} #'.format('1 - Login'))
-	print('# {0:<30} #'.format('0 - Close'))
-	print('# {0:<30} #'.format(''))
-	print(34 * '#')
+	print('# {0:^76} #'.format('WELCOME TO TERMINAL BANK'))
+	print(80 * '#')
+	print('# {0:<76} #'.format(''))
+	print('# {0:<76} #'.format('Choose an option:'))
+	#'#{0:->{length}}}'
+	print('# {0:<76} #'.format('1 - Login'))
+	print('# {0:<76} #'.format('0 - Close'))
+	print('# {0:<76} #'.format(''))
+	print(80 * '#')
 	print()
 	print('Type your option:')
 

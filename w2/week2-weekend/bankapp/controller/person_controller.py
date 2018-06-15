@@ -48,6 +48,6 @@ class PersonController():
                 raise Exception('Invalid person role "{0}".'.format(role))
 
             people = dal.select_by_role(person_role)
-            self.view.view_people(people, role)
+            self.view.show_people(people, role)
         except Exception as e:
             self.view.show_message('Error', e.args[0], True)

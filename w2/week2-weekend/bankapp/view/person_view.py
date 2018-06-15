@@ -24,15 +24,15 @@ class PersonView(BaseView):
         data.append(pwd)
         return data
 
-    def view_people(self, people, role):
+    def show_people(self, people, role):
         self.print_header('{0} LIST:'.format(role.upper()))
 
         # Prints column header
-        header_pattern = '# {0:<7} | {1:<20} | {2:<20} | {3:<10} #'
+        header_pattern = '# {0:<7} | {1:<25} | {2:<25} | {3:<10} #'
         print(header_pattern.format('Id', 'Name', 'Email', 'Login'))
         # Prints column values
         self.print_line_divider()
-        pattern = '# {0:07d} | {1:<20} | {2:<20} | {3:<10} #'
+        pattern = '# {0:07d} | {1:<25} | {2:<25} | {3:<10} #'
         for person in people:
             print(pattern.format(person.id, person.name, person.email, person.login))
 

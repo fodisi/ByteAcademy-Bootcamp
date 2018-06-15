@@ -67,7 +67,7 @@ class AccountView(BaseView):
         except Exception as e:
             self.show_message('ERROR', e.args[0], True)
 
-    def view_client_accounts(self, accounts):
+    def show_client_accounts(self, accounts):
         self.print_header("CLIENT ACCOUNT LIST")
         self.print_empty_header_line()
 
@@ -110,7 +110,7 @@ class AccountView(BaseView):
         except Exception as e:
             self.show_message('Error', e.args[0], True)
 
-    def view_statement(self, account):
+    def show_statement(self, account):
         self.__print_statements_header('ACCOUNT STATEMENT', account)
 
         # Prints table header
@@ -131,7 +131,7 @@ class AccountView(BaseView):
         self.print_line_divider()
         self.__print_balance(account)
 
-    def view_balance(self, account):
+    def show_balance(self, account):
         # Prints statement header
         self.__print_statements_header('ACCOUNT BALANCE', account)
         # Prints account balance

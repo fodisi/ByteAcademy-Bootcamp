@@ -11,7 +11,6 @@ class MainView(BaseView):
     def __init__(self):
         super().__init__()
 
-
     def show_main_menu(self, profile):
         choice = -1
 
@@ -23,7 +22,7 @@ class MainView(BaseView):
         elif profile in ['admin', 'ADMIN']:
             self.show_admin_menu()
         else:
-            raise Exception('Invalid profile "{0}"'.format(profile))
+            raise Exception('Invalid user profile "{0}"'.format(profile))
 
         try:
             self.print_empty_lines(2)

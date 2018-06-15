@@ -61,7 +61,7 @@ class AccountController():
         try:
             dal = ClientAccountDAL()
             accounts = dal.select_all_client_accounts()
-            self.view.view_client_accounts(accounts)
+            self.view.show_client_accounts(accounts)
         except Exception as e:
             self.view.show_message('Error', e.args[0], True)
 
@@ -98,12 +98,12 @@ class AccountController():
 
     def list_statement(self, account):
         try:
-            self.view.view_statement(account)
+            self.view.show_statement(account)
         except Exception as e:
             self.view.show_message('Error', e.args[0], True)
 
     def list_balance(self, account):
         try:
-            self.view.view_balance(account)
+            self.view.show_balance(account)
         except Exception as e:
             self.view.show_message('Error', e.args[0], True)

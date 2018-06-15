@@ -28,6 +28,6 @@ class BranchController():
         try:
             dal = BranchDAL()
             branches = dal.select_all()
-            self.view.view_branches(branches)
+            self.view.show_branches(branches)
         except Exception as e:
             self.view.show_message('Error', e.args[0], True)

@@ -15,7 +15,7 @@ class BranchView(BaseView):
         self.print_empty_lines(2)
         return input('Type the branch name:    ')
 
-    def view_branches(self, branches):
+    def show_branches(self, branches):
         self.print_header('BRANCH LIST')
 
         # Prints column headers
