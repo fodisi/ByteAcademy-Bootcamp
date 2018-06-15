@@ -8,84 +8,85 @@ from view.base_view import BaseView
 
 class MainView(BaseView):
 
-	def show_main_menu(self, profile):
-		choice = 0
-		
-		self.clear()
-		if profile == 'admin':
-			self.show_admin_menu()
-		elif isinstance(profile, Person):
-			self.show_manager_menu(profile)
-		elif isinstance(profile, Account):
-			self.show_client_menu(profile)
-		else:
-			raise Exception('Invalid profile "{0}"'.format(profile))
-			
-		try:
-			print('Your option:')
-			choice = int(input())
-		except Exception:
-			print('Invalid option. Press ENTER to continue...') 
-			input()
-		
-		return choice	
-	
-	def show_admin_menu(self):
-		print(34 * '#')
-		print('# {0:^30} #'.format('WELCOME'))
-		print('# {0:^30} #'.format('Profile: ADMIN'))
-		print(34 * '#')
-		#Prints menu options
-		print('# {0:<30} #'.format('Choose an option:'))
-		print('# {0:<30} #'.format('100 - Create Branch'))
-		print('# {0:<30} #'.format('101 - View Branch List'))
-		print('# {0:<30} #'.format('102 - Create Manager'))
-		print('# {0:<30} #'.format('103 - View Manager List'))
-		print('# {0:<30} #'.format('0 - Exit'))
-		print(34 * '#')
-		print()
-
-	def show_manager_menu(self, manager):
-		print(34 * '#')
-		welcome_message = 'WELCOME, {0}'.format(manager.name)
-		print('# {0:^30} #'.format(welcome_message))
-		print('# {0:^30} #'.format('Profile: MANAGER'))
-		print(34 * '#')
-		print('# {0:<30} #'.format('Choose an option:'))
-		print('# {0:<30} #'.format('200 - Create Account'))
-		print('# {0:<30} #'.format('201 - View Account List'))
-		print('# {0:<30} #'.format('0 - Exit'))
-		print(34 * '#')
-		print()
-
-	
-	def show_client_menu(self, account):
-		#Prints header
-		print(34 * '#')
-		welcome_message = 'WELCOME, {0}'.format(account.client.name)
-		print('# {0:^30} #'.format(welcome_message))
-		print(34 * '#')
-		print('# {0:<30} #'.format("YOUR'RE CONNECTED TO:"))
-		branch_info = 'Branch: {0:07d}'.format(account.branch_id)
-		account_info = 'Account Number: {0:07d}'.format(account.number)
-		print('# {0:<30} #'.format(branch_info))
-		print('# {0:<30} #'.format(account_info))
-		print(34 * '#')
-		#Prints menu options
-		print('# {0:<30} #'.format('Choose an option:'))
-		print('# {0:<30} #'.format('1 - Deposit'))
-		print('# {0:<30} #'.format('2 - Withdrawal'))
-		print('# {0:<30} #'.format('3 - Account Balance'))
-		print('# {0:<30} #'.format('4 - Transaction History'))
-		print('# {0:<30} #'.format('0 - Exit'))
-		print(34 * '#')
-		print()
+    def __init__(self):
+        super().__init__()
 
 
+    def show_main_menu(self, profile):
+        choice = -1
 
+        self.clear()
+        if isinstance(profile, Person):
+            self.show_manager_menu(profile)
+        elif isinstance(profile, Account):
+            self.show_client_menu(profile)
+        elif profile in ['admin', 'ADMIN']:
+            self.show_admin_menu()
+        else:
+            raise Exception('Invalid profile "{0}"'.format(profile))
 
+        try:
+            self.print_empty_lines(2)
+            choice = int(input('Your option:    '))
+        except Exception:
+            choice = -1
 
+        return choice
 
+    def show_admin_menu(self):
+        pattern = self.get_line_pattern(BaseView.ALIGN_LEFT)
+        # Prints header
+        self.print_header('WELCOME, ADMIN')
+        print(pattern.format('Profile: ADMIN'))
 
+        # Prints menu options
+        self.print_empty_header_line()
+        print(pattern.format('Choose an option:'))
+        self.print_line_divider()
+        print(pattern.format('100 - Create Branch'))
+        print(pattern.format('101 - View Branch List'))
+        print(pattern.format('102 - Create Manager'))
+        print(pattern.format('103 - View Manager List'))
+        print(pattern.format('  0 - Exit'))
+        self.print_empty_header_line()
+        self.print_border_line()
 
+    def show_manager_menu(self, manager):
+        pattern = self.get_line_pattern(BaseView.ALIGN_LEFT)
+        # Prints header
+        self.print_header('WELCOME, {0}'.format(manager.name))
+        print(pattern.format('Profile: MANAGER'))
 
+        # Prints menu options
+        self.print_empty_header_line()
+        print(pattern.format('Choose an option:'))
+        self.print_line_divider()
+        print(pattern.format('200 - Create Account'))
+        print(pattern.format('201 - View Account List'))
+        print(pattern.format('  0 - Exit'))
+        self.print_empty_header_line()
+        self.print_border_line()
+
+    def show_client_menu(self, account):
+        pattern = self.get_line_pattern(BaseView.ALIGN_LEFT)
+        # Prints header
+        branch_info = self.fill_with('Branch:', 18)
+        branch_info = '{0}{1:08d}'.format(branch_info, account.branch_id)
+        account_info = self.fill_with('Account Number:', 18)
+        account_info = '{0}{1:08d}'.format(account_info, account.number)
+        self.print_header('WELCOME, {0}'.format(account.client.name),
+                          "YOUR'RE CONNECTED TO:",
+                          branch_info,
+						  account_info)
+
+        # Prints menu options
+        self.print_empty_header_line()
+        print(pattern.format('Choose an option:'))
+        self.print_line_divider()
+        print(pattern.format('1 - Deposit'))
+        print(pattern.format('2 - Withdrawal'))
+        print(pattern.format('3 - Account Balance'))
+        print(pattern.format('4 - Transaction History'))
+        print(pattern.format('0 - Exit'))
+        self.print_empty_header_line()
+        self.print_border_line()

@@ -6,28 +6,31 @@ from model.branch import Branch
 
 
 class BranchView(BaseView):
-	
-	def create_branch(self):
-		self.clear()
-		
-		print(34 * '#')
-		print('# {0:^30} #'.format('CREATE NEW BRANCH:'))
-		print(34 * '#')
-		print()
-		print('Type the branch name:')
-		return input()
 
-	def view_branches(self, branches):
-		self.clear()
-		print(44 * '#')
-		print('# {0:^40} #'.format('BRANCH LIST:'))
-		print(44 * '#')
-		print('# {0:<40} #'.format(''))
-		print('# {0:<7} | {1:<31}#'.format('Id', 'Name'))
-		for branch in branches:
-			print('# {0:07d} | {1:<31}#'.format(branch.id, branch.name))
-		
-		print('# {0:<40} #'.format(''))
-		print(44 * '#')
-		print('\n\nPress ENTER to return:')
-		return input()
+    def __init__(self):
+        super().__init__()
+
+    def create_branch(self):
+        self.print_header('CREATE NEW BRANCH')
+        self.print_empty_lines(2)
+        return input('Type the branch name:    ')
+
+    def view_branches(self, branches):
+        self.print_header('BRANCH LIST')
+
+        # Prints column headers
+        print('# {0:<7} | {1:<67}#'.format('Id', 'Name'))
+        # Prints line divider and column values
+        self.print_line_divider()
+        for branch in branches:
+            print('# {0:07d} | {1:<67}#'.format(branch.id, branch.name))
+
+        # Waits for user input
+        self.print_empty_header_line()
+        self.print_border_line()
+        self.wait_for_user()
+
+
+if __name__ == '__main__':
+    view = BranchView()
+    view.create_branch()

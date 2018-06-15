@@ -48,7 +48,7 @@ class AccountController():
 
             message = 'Branch|Account: "{0}|{1}" for client "{2}" created successfully.'
             message = message.format(
-                account.number, account.branch_id, client.name)
+                account.branch_id, account.number, client.name)
             self.view.show_message('Success', message, True)
         except Exception as e:
             msg_pattern = '{0}\n{1}\n\n{2}'

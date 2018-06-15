@@ -1,55 +1,46 @@
 #!/usr/bin/env python3
 
 
-from view.base_view import BaseView
 from model.person import Person
+from view.login_view import LoginView
+from view.base_view import BaseView
 
 
 class PersonView(BaseView):
-	
-	def create_person(self, role):
-		self.clear()
-		data = []
-		
-		print(34 * '#')
-		
-		title = 'CREATE NEW {0}:'.format(role.upper())
-		print('# {0:^30} #'.format(title))
-		print(34 * '#')
-		print()
-		print('Type the name:')
-		data.append(input())
-		print('Type the email:')
-		data.append(input())
-		print('Type the login:')
-		data.append(input())
-		print('Type the password:')
-		data.append(input())
-		
-		return data
 
-	def view_people(self, people, role):
-		self.clear()
-		print(80 * '#')
-		title = '{0} LIST:'.format(role.upper())
-		print('# {0:^76} #'.format(title))
-		print(80 * '#')
-		print('# {0:<76} #'.format(''))
-		print('# {0:<7} | {1:<20} | {2:<20} | {3:<20} #'.format(
-				'Id', 
-				'Name',
-				'Email',
-				'Login'
-				))
-		for person in people:
-			print('# {0:07d} | {1:<20} | {2:<20} | {3:<20} #'.format(
-				person.id, 
-				person.name,
-				person.email,
-				person.login
-				))
-		
-		print('# {0:<76} #'.format(''))
-		print(80 * '#')
-		print('\n\nPress ENTER to return:')
-		return input()
+    def __init__(self):
+        super().__init__()
+
+    def create_person(self, role):
+        data = []
+        self.print_header('CREATE NEW {0}:'.format(role.upper()))
+
+        # Asks for personal info.
+        self.print_empty_lines(2)
+        data.append(input(self.fill_with('Name:', 15)))
+        data.append(input(self.fill_with('Email:', 15)))
+        data.append(input(self.fill_with('Login:', 15)))
+        pwd = LoginView.input_password(self.fill_with('Password:', 15))
+        data.append(pwd)
+        return data
+
+    def view_people(self, people, role):
+        self.print_header('{0} LIST:'.format(role.upper()))
+
+        # Prints column header
+        header_pattern = '# {0:<7} | {1:<20} | {2:<20} | {3:<10} #'
+        print(header_pattern.format('Id', 'Name', 'Email', 'Login'))
+        # Prints column values
+        self.print_line_divider()
+        pattern = '# {0:07d} | {1:<20} | {2:<20} | {3:<10} #'
+        for person in people:
+            print(pattern.format(person.id, person.name, person.email, person.login))
+
+        self.print_empty_header_line()
+        self.print_border_line()
+        self.wait_for_user()
+
+
+if __name__ == '__main__':
+    view = PersonView()
+    view.create_person('Manager')

@@ -23,8 +23,8 @@ class MainController():
         if profile == 'invalid':
             return
 
-        option = 1
-        while option > 0:
+        option = -1
+        while option != 0:
             # Shows main menu according to profile
             option = self.view.show_main_menu(profile)
             # client - account deposit
@@ -57,11 +57,14 @@ class MainController():
             # manager-list accounts
             elif option == 201:
                 AccountController().list_client_accounts()
+            elif option != 0:
+                self.view.show_message('Error', 'Invalid option. Please try again.', True)
+
 
     def login(self):
         user, password = LoginView().show_login()
-        # if user in ['admin', 'manager']:
-        if user == 'admin':
+
+        if user in ['admin', 'ADMIN']:
             return user
 
         # Validates login with DB.
@@ -69,14 +72,17 @@ class MainController():
         person = person_dal.select_by_login(user)
 
         if person != None:
+            # Validates input agains database info.
             valid_login = person.login == user and person.password == password
+
+            # For clients, gets the Client Account object and returns it
             if valid_login and person.role == 'C':
                 account_dal = ClientAccountDAL()
                 client_account = account_dal.select_client_account(person.id)
-                print('select exec')
                 if client_account != None:
                     return client_account
-
+            
+            # For manager, gets the Manager object and returns it
             if valid_login and person.role == 'M':
                 return person
 
