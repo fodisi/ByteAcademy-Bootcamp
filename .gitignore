@@ -4,7 +4,8 @@
 bitcoin/
 .vscode/
 vscode/
-
+*.zip
+*.tar
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

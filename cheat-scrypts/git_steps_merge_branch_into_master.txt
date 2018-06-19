@@ -1,0 +1,6 @@
+while you're still on your branch:
+make sure to commit everything before merging
+
+git checkout MASTER_BRANCH
+git merge BRANCH_NAME
+git push origin MASTER_BRANCH
