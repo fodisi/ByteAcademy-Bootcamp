@@ -11,6 +11,9 @@ vscode/
 *.jpeg
 *.bmp
 *.svg
+.idea
+.idea/
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
