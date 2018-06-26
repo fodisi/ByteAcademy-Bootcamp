@@ -25,6 +25,8 @@ def display_header():
 def display_error(error):
     display_header()
     print('\n\n\nAn ERROR ocurred:')
+    print('\n{0}'.format('Invalid input'))
+    print('\n{0}'.format('Details:'))
     print('\n{0}'.format(error))
     wait_for_user()
 
