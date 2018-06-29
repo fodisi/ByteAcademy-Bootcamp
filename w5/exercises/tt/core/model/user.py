@@ -29,3 +29,6 @@ class User:
 
     def get_current_balance(self, username):
         return UserMapper().select_current_balance(username)
+
+    def get_balance_for_pl(self, username):
+        return UserMapper().select_balance_for_pl(username)
