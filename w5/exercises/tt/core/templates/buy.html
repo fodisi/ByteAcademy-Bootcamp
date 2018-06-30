@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="https://getbootstrap.com/favicon.ico">
 
-    <title>User Dashboard - Terminal Trader</title>
+    <title>Buy - Terminal Trader</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,10 +20,12 @@
 <body>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Welcome, {{ session['user'] }}!</a>
-        <!--input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"-->
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
-                <a class="nav-link" href="{{ url_for('logout.logout') }}">Sign out</a>
+                <a class="nav-link" href="{{ url_for('logout.logout') }}">
+                    <span data-feather="log-out"></span>
+                    Sign out
+                </a>
             </li>
         </ul>
     </nav>
@@ -34,14 +36,19 @@
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <!--a class="nav-link active" href="{{ '/dashboard/%s'%username }}"-->
                             <a class="nav-link" href="{{ url_for('dashboard.show_dashboard') }}">
                                 <span data-feather="home"></span>
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('dashboard.show_dashboard') }}">
+                                <span data-feather="activity"></span>
                                 Dashboard
                             </a>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{ url_for('buy.show_buy') }}">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ url_for('buy.show_buy') }}">
                                 <span data-feather="shopping-cart"></span>
                                 Buy
                                 <span class="sr-only">(current)</span>
@@ -49,31 +56,25 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('sell.show_sell') }}">
-                                <span data-feather="shopping-cart"></span>
+                                <span data-feather="credit-card"></span>
                                 Sell
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('lookup.show_lookup') }}">
-                                <span data-feather="users"></span>
+                                <span data-feather="eye"></span>
                                 Lookup
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('quote.show_quote') }}">
-                                <span data-feather="bar-chart-2"></span>
+                                <span data-feather="dollar-sign"></span>
                                 Quote
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('balance.show_balance') }}">
-                                <span data-feather="layers"></span>
-                                Balance
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('order.show_order') }}">
-                                <span data-feather="layers"></span>
+                                <span data-feather="list"></span>
                                 Orders
                             </a>
                         </li>
@@ -83,16 +84,16 @@
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Buy stock</h1>
+                    <h4 class="h4">Buy</h4>
                     <div class="btn-toolbar mb-2 mb-md-0">
                     </div>
                 </div>
 
-                <form action="{{ url_for('dashboard.show_dashboard') }}" method="POST" class="form-buy">
+                <form action="{{ url_for('buy.show_buy') }}" method="POST" class="form-buy">
                     <div class="form-row align-items-center">
                         <div class="col-auto">
-                            <label class="sr-only" for="inputSymbol">Symbol</label>
-                            <input name="symbol" type="text" class="form-control mb-2" id="inputSymbol" placeholder="Symbol">
+                            <label class="sr-only" for="inputSymbol">Ticker Symbol</label>
+                            <input name="symbol" type="text" class="form-control mb-2" id="inputSymbol" placeholder="Ticker Symbol">
                         </div>
                         <div class="col-auto">
                             <label class="sr-only" for="inputVolume">Volume</label>
@@ -106,11 +107,11 @@
 
                 <div class="row">
                     {% if status == 'SUCCESS' %}
-                    <p> Order executed successfully. </p>
+                    <p> Buy order executed successfully. </p>
                     {% elif status == 'NO_FUNDS' %}
-                    <p> Not enought funds available. Your current balance is: {{error_detail}} </p>
+                    <p> Not enought funds available. Your current balance is $ {{ "{:,.2f}".format(error_detail) }}. </p>
                     {% elif status == 'EXCEPTION' %}
-                    <p> Operation not executed. Error: {{error_detail}}</p>
+                    <p> Operation not executed. Error: {{ error_detail }}. </p>
                     {% endif %}
                 </div>
 
