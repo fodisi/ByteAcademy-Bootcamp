@@ -9,14 +9,13 @@ from core.model.holding import Holding
 
 
 class Order():
-    def buy(self, ticker_symbol, trade_volume, username):
-        # TODO Replace fixed brokerage fee
-        brokerage_fee = 6.95
 
+    def buy(self, ticker_symbol, trade_volume, username):
         user = User()
         user_balance = user.get_current_balance(username)
         last_price = AssetWrapper().get_last_price(ticker_symbol)
-        transaction_cost = (last_price * float(trade_volume)) + brokerage_fee
+        transaction_cost = (last_price * float(trade_volume)
+                            ) + Holding.BROKERAGE_FEE
         if transaction_cost <= user_balance:
             # TODO Make inserts/updates in both tables be part of the same DB transaction.
 
@@ -27,7 +26,7 @@ class Order():
                                        'B',
                                        last_price,
                                        trade_volume,
-                                       brokerage_fee)
+                                       Holding.BROKERAGE_FEE)
 
             # Inserts/Updates holdings
             unit_cost = transaction_cost / float(trade_volume)
@@ -45,16 +44,14 @@ class Order():
             return 'NO_FUNDS'
 
     def sell(self, ticker_symbol, trade_volume, username):
-        # TODO Replace fixed brokerage fee
-        brokerage_fee = 6.95
-
         user = User()
         holding = Holding()
         user_balance = user.get_current_balance(username)
-        holding_volume = holding.get_holding_volume_by_symbol(
+        holding_volume = holding.get_holding_volume(
             username, ticker_symbol)
         last_price = AssetWrapper().get_last_price(ticker_symbol)
-        transaction_value = (last_price * float(trade_volume)) - brokerage_fee
+        transaction_value = (last_price * float(trade_volume)
+                             ) - Holding.BROKERAGE_FEE
         if holding_volume >= trade_volume:
             # TODO Make inserts/updates in tables be part of the same DB transaction.
 
@@ -65,7 +62,7 @@ class Order():
                                        'S',
                                        last_price,
                                        trade_volume,
-                                       brokerage_fee)
+                                       Holding.BROKERAGE_FEE)
 
             # Inserts/Updates holdings
             unit_price = transaction_value / float(trade_volume)
@@ -73,7 +70,8 @@ class Order():
                                     trade_volume, unit_price, 'S')
 
             # When selling, new balance must sum up transaction value, excluding fees
-            new_balance = user_balance + (transaction_value - brokerage_fee)
+            new_balance = user_balance + \
+                (transaction_value - Holding.BROKERAGE_FEE)
             user.update_balance(username, new_balance)
 
             return 'SUCCESS'
