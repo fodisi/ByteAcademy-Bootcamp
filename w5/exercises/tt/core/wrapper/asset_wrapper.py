@@ -8,10 +8,11 @@ import requests
 class AssetWrapper():
     def get_last_price(self, ticker_symbol):
         try:
+            # TODO Re-factor the following code so it doesn't just arbitrarily take the first
             endpoint = 'http://dev.markitondemand.com/MODApis/Api/v2/Quote/json?symbol='
             return json.loads(requests.get(endpoint + ticker_symbol).text)['LastPrice']
         except:
-            msg = 'markitondemand API did not return a price for {0}. Please try again.'
+            msg = "Unable to get a price for symbol '{0}' on MarkitOnDemand API. Check your input and try again."
             raise Exception(msg.format(ticker_symbol))
 
     def get_ticker_symbol(self, company_name):
@@ -20,7 +21,7 @@ class AssetWrapper():
             endpoint = 'http://dev.markitondemand.com/MODApis/Api/v2/Lookup/json?input='
             return json.loads(requests.get(endpoint + company_name).text)[0]['Symbol']
         except:
-            msg = 'markitondemand API did not return a ticker symbol for {0}. Please try again.'
+            msg = "Unable to get a ticker symbol for company '{0}' on MarkitOnDemand API. Check your input and try again."
             raise Exception(msg.format(company_name))
 
 
