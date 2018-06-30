@@ -6,18 +6,10 @@ from core.mapper.holding_mapper import HoldingMapper
 
 
 class Holding:
-    def get_holdings_by_symbol(self, username, ticker_symbol):
-        return HoldingMapper().select_holdings_by_symbol(username, ticker_symbol)
-
-    def get_holding_volume_by_symbol(self, username, ticker_symbol):
-        holding_volume = 0
-        holdings = self.get_holdings_by_symbol(username, ticker_symbol)
-        if holdings != None:
-            holding_volume = holdings['volume']
-        return holding_volume
+    BROKERAGE_FEE = 6.95
 
     def update_holdings(self, username, ticker_symbol, trade_volume, trade_unit_price, transaction_type):
-        holdings = self.get_holdings_by_symbol(username, ticker_symbol)
+        holdings = self.get_user_holdings_by_symbol(username, ticker_symbol)
 
         if holdings != None:
             if transaction_type == 'B':
@@ -31,6 +23,7 @@ class Holding:
                                                 ticker_symbol,
                                                 total_volume,
                                                 weighted_avg_price)
+
             elif transaction_type == 'S':
                 # when selling, the average price of holdings doesn't change,
                 # except when remaining volume is 0
@@ -49,13 +42,22 @@ class Holding:
             HoldingMapper().insert_holdings(username, ticker_symbol, trade_volume,
                                             trade_unit_price)
 
-    def get_holdings_by_username(self, username):
+    def get_holding_volume(self, username, ticker_symbol):
+        holding_volume = 0
+        holdings = self.get_user_holdings_by_symbol(username, ticker_symbol)
+        if holdings != None:
+            holding_volume = holdings['volume']
+        return holding_volume
+
+    def get_user_holdings_by_symbol(self, username, ticker_symbol):
+        return HoldingMapper().select_holdings_by_symbol(username, ticker_symbol)
+
+    def get_user_holdings(self, username):
         return HoldingMapper().select_holdings_by_username(username)
 
     def get_holdings_with_market_value(self, username):
-        brokerage_fee = 6.95
         mkt_holding_list = None
-        user_holdings = self.get_holdings_by_username(username)
+        user_holdings = self.get_user_holdings(username)
         if user_holdings != None:
             mkt_holding_list = []
             # Generates an updated holding list containing market price info
@@ -77,7 +79,7 @@ class Holding:
                 mkt_holding['total_buy_price'] = total_buy_price
                 # Total based on Market Prices. Assumes one brokerage fee per holding.
                 total_mkt_price = (
-                    item['volume'] * market_price) - brokerage_fee
+                    item['volume'] * market_price) - Holding.BROKERAGE_FEE
                 mkt_holding['total_mkt_price'] = total_mkt_price
                 # Difference between market and buy price
                 mkt_holding['difference'] = total_mkt_price - total_buy_price
