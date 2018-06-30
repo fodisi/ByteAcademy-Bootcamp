@@ -27,6 +27,7 @@ def show_login():
             # return redirect(url_for('dashboard.show_dashboard',
             #                         username=user["username"]))
             session['user'] = username
+            session['francis'] = username
             return redirect(url_for('dashboard.show_dashboard'))
         else:
             session['user'] = ''
