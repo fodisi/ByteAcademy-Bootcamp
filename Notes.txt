@@ -289,3 +289,14 @@ CTRL+B + } >> move the current pane right
 
 
 
+DigitalOcean
+
+sign for digitalocean 100 dollars credit
+
+SSH Keys
+create ssh private key >> ssh-keygen -t rsa -b 4096
+shows your generated private key >> cat .ssh/id_rsa.pub
+
+apt-get -y install nginx firewalld ntp fail2ban
+
+
