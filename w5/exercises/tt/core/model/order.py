@@ -52,6 +52,7 @@ class Order():
         last_price = AssetWrapper().get_last_price(ticker_symbol)
         transaction_value = (last_price * float(trade_volume)
                              ) - Holding.BROKERAGE_FEE
+                             
         if holding_volume >= trade_volume:
             # TODO Make inserts/updates in tables be part of the same DB transaction.
 
