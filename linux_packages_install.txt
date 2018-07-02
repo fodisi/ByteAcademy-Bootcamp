@@ -55,4 +55,6 @@ sudo apt-get install tmux
 sudo apt-get install cmatrix
 sudo apt-get install cowsay
 
+apt-get -y install nginx firewalld ntp fail2ban
+
 
