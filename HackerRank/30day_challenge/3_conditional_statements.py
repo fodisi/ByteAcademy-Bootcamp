@@ -42,7 +42,9 @@ Sample Case 1:
  and is even, so it isn't weird. Thus, we print Not Weird.
  """
 
+
 #!/bin/python3
+
 
 import math
 import os
