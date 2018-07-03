@@ -41,6 +41,9 @@
 # the first string contains the ordered characters from 's even indices (), and the second string contains the ordered characters from 's odd indices().
 
 
+#!/usr/bin/env python3
+
+
 if __name__ == '__main__':
     N = int(input())
     lines = []
