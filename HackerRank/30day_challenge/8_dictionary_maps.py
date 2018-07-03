@@ -55,6 +55,9 @@
 # Harry is one of the keys in our dictionary, so we print harry = 12299933.
 
 
+#!/usr/bin/env python3
+
+
 if __name__ == '__main__':
     N = int(input())
     name_numbers = [input().rstrip().split() for _ in range(N)]
