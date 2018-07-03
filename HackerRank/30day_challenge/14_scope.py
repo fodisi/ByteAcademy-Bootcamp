@@ -39,7 +39,9 @@
 
 # The maximum of these differences is, so it saves the value as the  instance variable. The locked stub code in the editor then prints the value stored as, which is .
 
+
 #!/bin/python3
+
 
 class Difference:
     def __init__(self, a):

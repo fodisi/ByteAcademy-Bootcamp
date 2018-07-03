@@ -42,6 +42,9 @@
 # This student had scores to average: and.The student 's average grade is . An average grade of corresponds to the letter grade , so our calculate() method should return the character' O '.
 
 
+#!/usr/bin/env python3
+
+
 class Person:
     def __init__(self, firstName, lastName, idNumber):
         self.firstName = firstName
