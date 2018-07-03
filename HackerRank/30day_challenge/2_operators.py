@@ -38,7 +38,9 @@ We round  to the nearest dollar(integer) and then print our result:
 The total meal cost is 15 dollars.
  """
 
+
 #!/bin/python3
+
 
 import math
 import os
