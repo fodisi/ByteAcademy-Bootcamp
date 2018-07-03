@@ -32,6 +32,10 @@
 # 2 x 9 = 18
 # 2 x 10 = 20
 
+
+#!/usr/bin/env python3
+
+
 if __name__ == '__main__':
     n = int(input())
     for i in range(1, 11):
