@@ -43,6 +43,9 @@
 # You will not pass this challenge if you attempt to assign the Sample Case values to your variables instead of following the instructions above and reading input from stdin.
 
 
+#!/usr/bin/env python3
+
+
 i = 4
 d = 4.0
 s = 'HackerRank '
