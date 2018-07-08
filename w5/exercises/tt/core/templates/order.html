@@ -111,7 +111,7 @@
                         <tbody>
                             {% for item in orders %}
                             <tr>
-                                <td align="right">{{ item['date_time'].strftime('%Y/%m/%d %H:%M:%S') }}</td>
+                                <td>{{ item['date_time'].strftime('%Y/%m/%d %H:%M:%S') }}</td>
                                 <td>{{ item['ticker_symbol'] }}</td>
 
                                 {%if item['order_type'] == 'B' %}

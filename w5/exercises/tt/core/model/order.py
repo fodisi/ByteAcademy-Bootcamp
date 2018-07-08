@@ -2,10 +2,10 @@
 
 from datetime import datetime
 
-from core.wrapper.asset_wrapper import AssetWrapper
 from core.mapper.order_mapper import OrderMapper
 from core.model.user import User
 from core.model.holding import Holding
+from core.model.asset import Asset
 
 
 class Order():
@@ -13,7 +13,7 @@ class Order():
     def buy(self, ticker_symbol, trade_volume, username):
         user = User()
         user_balance = user.get_current_balance(username)
-        last_price = AssetWrapper().get_last_price(ticker_symbol)
+        last_price = Asset().get_last_price(ticker_symbol)
         transaction_cost = (last_price * float(trade_volume)
                             ) + Holding.BROKERAGE_FEE
         if transaction_cost <= user_balance:
@@ -49,10 +49,10 @@ class Order():
         user_balance = user.get_current_balance(username)
         holding_volume = holding.get_holding_volume(
             username, ticker_symbol)
-        last_price = AssetWrapper().get_last_price(ticker_symbol)
+        last_price = Asset().get_last_price(ticker_symbol)
         transaction_value = (last_price * float(trade_volume)
                              ) - Holding.BROKERAGE_FEE
-                             
+
         if holding_volume >= trade_volume:
             # TODO Make inserts/updates in tables be part of the same DB transaction.
 
@@ -80,11 +80,11 @@ class Order():
             # TODO Improve return so could show current balance and transaction cost.
             return 'NO_FUNDS'
 
-    def get_last_price(self, ticker_symbol):
-        return AssetWrapper().get_last_price(ticker_symbol)
+    # def get_last_price(self, ticker_symbol):
+    #     return AssetWrapper().get_last_price(ticker_symbol)
 
-    def get_ticker_symbol(self, company_name):
-        return AssetWrapper().get_ticker_symbol(company_name)
+    # def get_ticker_symbol(self, company_name):
+    #     return AssetWrapper().get_ticker_symbol(company_name)
 
     def get_order_history(self, username):
         return OrderMapper().select_order_history(username)

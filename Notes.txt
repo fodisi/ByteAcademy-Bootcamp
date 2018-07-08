@@ -300,3 +300,55 @@ shows your generated private key >> cat .ssh/id_rsa.pub
 apt-get -y install nginx firewalld ntp fail2ban
 
 
+
+open Visual Trace Route 1.7.0 >> checks where is a IP from
+
+
+
+MDN >> Mozilla Developer Network : Good source for web development information
+
+
+curl -i <address>:<port> >> gives you information about the internet request you're doing
+
+
+
+How do you share a secret - article about cryptography
+book: cryptography engineering
+
+
+remote server
+wget https://www.multichain.com/download/multichain-1.0.5.tar.gz
+tar -xvzf multichain-1.0.5.tar.gz
+cd multichain-1.0.5/
+mv multichaind multichain-cli multichain-util /usr/local/bin/
+
+server1
+multichain-util create chain1
+nano ~/.multichain/chain1/params.dat
+# a deamon is a background process
+multichaind chain1 -daemon
+508a0fd9eb330bb5424adac828fd2be522cb4dc7379fc827181b88051ede6487
+multichain-cli chain1 grant 1RPgDTxv3Jg6ZRpYhcRE1JDhgZN8BbXcJWxCC6 connect
+multichain-cli chain1 >> opens a command line tool for the blockchain
+getinfo
+help
+listpermissions
+getnewaddress >> gets a new address
+getaddresses >> gets new addresses
+getblockchainparams
+getpeerinfo
+listpermissions issue
+issue 1V9BtbsjF9foqZVfmT3osVf2ezYcVtnB6CNNrv MechaCoin 1000 0.01
+
+
+
+server2
+multichaind chain1@10.10.0.5:7425
+
+
+
+
+
+
+
+

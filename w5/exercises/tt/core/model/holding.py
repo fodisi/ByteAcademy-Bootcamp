@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-from core.wrapper.asset_wrapper import AssetWrapper
+from core.model.asset import Asset
 from core.mapper.holding_mapper import HoldingMapper
 
 
@@ -63,8 +63,7 @@ class Holding:
             # Generates an updated holding list containing market price info
             for item in user_holdings:
                 # Gets updated market price
-                market_price = AssetWrapper().get_last_price(
-                    item['ticker_symbol'])
+                market_price = Asset().get_last_price(item['ticker_symbol'])
                 # Creates and fills holdings dictionary with updated market info
                 mkt_holding = {}
                 mkt_holding['pk'] = item['pk']

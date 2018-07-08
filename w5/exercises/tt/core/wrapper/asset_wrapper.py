@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 
+
 import json
 
 import requests
 
 
 class AssetWrapper():
+
     def get_last_price(self, ticker_symbol):
         try:
             # TODO Re-factor the following code so it doesn't just arbitrarily take the first
@@ -17,6 +19,10 @@ class AssetWrapper():
 
     def get_ticker_symbol(self, company_name):
         # TODO Re-factor the following code so it doesn't just arbitrarily take the first
+        """ RESPONSE FORMAT FROM THE API
+        [{"Symbol":"TSLA","Name":"Tesla Inc","Exchange":"NASDAQ"}]
+        """
+
         try:
             endpoint = 'http://dev.markitondemand.com/MODApis/Api/v2/Lookup/json?input='
             return json.loads(requests.get(endpoint + company_name).text)[0]['Symbol']
@@ -29,3 +35,5 @@ if __name__ == '__main__':
     wrapper = AssetWrapper()
     print(wrapper.get_ticker_symbol('tesla'))
     print(wrapper.get_last_price('tsla'))
+    print(wrapper.get_ticker_symbol('tesla154255'))
+    print(wrapper.get_last_price('tsla154255'))
