@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Byte Academy Store</title>
+    <link href="{{url_for('static',filename='bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename='plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename='css/animate.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename='css/style.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename='css/colors/default.css')}}" id="theme" rel="stylesheet">
+</head>
+
+<body class="header">
+    <div id="wrapper">
+
+        <div id="page" style="background-color:#edf7ed">
+            <div class="container-fluid">
+                <div class="page">
+                    <div class="white-box">
+                        <div class="text">
+                            <h4>__________Byte Academy Store Listing__________</h4>
+                        </div>
+                    </div>
+                </div>
+
+                {%if product%}
+                <div class="page">
+                    <div class="col-md-4 col-xs-12">
+                        <div class="white-box">
+                            <figure class="figure">
+                                <img width="100%" alt="user" src="{{url_for('static',filename=product['picture'])}} ">
+                            </figure>
+                        </div>
+                        <div class="white-box">
+                            <div class="text-center">
+                                <h1>{{product['name']}}</h1>
+                                <h1>{{product['price']}}</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    {%else%}
+                    <p>Product Not Found</p>
+                    {%endif%}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{url_for('static',filename='plugins/bower_components/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{url_for('static',filename='bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static',filename='plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/jquery.slimscroll.js')}}"></script>
+    <script src="{{url_for('static',filename='js/waves.js')}}"></script>
+    <script src="{{url_for('static',filename='js/custom.min.js')}}"></script>
+</body>
+
+</html>

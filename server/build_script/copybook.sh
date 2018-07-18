@@ -16,7 +16,7 @@
 #                                                                              #
 # You will need the following information:                                     #
 # ~ your email address (hereafter: francis2301@gmail.com)                               #
-# ~ your server's internet protocol address (hereafter: 178.128.150.225)         #
+# ~ your server's internet protocol address (hereafter: 206.189.70.207)         #
 # ~ your server's name (hereafter: digitalocean-ubuntu-fodisi)                                 #
 #                                                                              #
 # Be advised:                                                                  #
@@ -46,7 +46,7 @@ cd ~/build_script
 
 sh -c 'echo "odisi:Abcd12345." > .credentials'
 
-ssh root@178.128.150.225
+ssh root@206.189.70.207
 
 # ::|\ ________ /|:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: #
 # ::| |        | |:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: #
@@ -80,11 +80,11 @@ exit
 # ::!/         \!::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: #
 
 ## scp >> copies over ssh >> copies file id_rsa.puc to remote computer
-scp ~/.ssh/id_rsa.pub root@178.128.150.225:/etc/ssh/odisi/authorized_keys
+scp ~/.ssh/id_rsa.pub root@206.189.70.207:/etc/ssh/odisi/authorized_keys
 
-scp .credentials root@178.128.150.225:/home/odisi/
+scp .credentials root@206.189.70.207:/home/odisi/
 
-ssh root@178.128.150.225
+ssh root@206.189.70.207
 
 # ::|\ ________ /|:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: #
 # ::| |        | |:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: #
@@ -405,8 +405,11 @@ cat /home/odisi/.credentials | chpasswd
 
 rm /home/odisi/.credentials
 
+# connect back to the server
+ssh -p 6174 odisi@206.189.70.207
 
-
+# Copies file from local to server over ssh
+scp -p 6174 -r LOCAL_FOLDER odisi@206.189.70.207:/home/
 
 # sudo apt-get -y install postgresql postgresql-contrib
 

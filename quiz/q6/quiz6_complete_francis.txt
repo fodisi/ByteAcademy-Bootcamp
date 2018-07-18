@@ -1,0 +1,428 @@
+root@byte-quiz:~# systemctl status fail2ban firewalld nginx ntp
+● fail2ban.service - Fail2Ban Service
+   Loaded: loaded (/lib/systemd/system/fail2ban.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:32:52 EDT; 32s ago
+     Docs: man:fail2ban(1)
+  Process: 6506 ExecStop=/usr/bin/fail2ban-client stop (code=exited, status=0/SUCCESS)
+  Process: 6528 ExecStart=/usr/bin/fail2ban-client -x start (code=exited, status=0/SUCCESS)
+ Main PID: 6533 (fail2ban-server)
+    Tasks: 7
+   Memory: 9.5M
+      CPU: 427ms
+   CGroup: /system.slice/fail2ban.service
+           └─6533 /usr/bin/python3 /usr/bin/fail2ban-server -s /var/run/fail2ban/fail2ban.sock -p /var/run/fail2ban/fail2ban.pid -x -b
+
+Jul 09 10:32:52 byte-quiz systemd[1]: Stopped Fail2Ban Service.
+Jul 09 10:32:52 byte-quiz systemd[1]: Starting Fail2Ban Service...
+Jul 09 10:32:52 byte-quiz fail2ban-client[6528]: 2018-07-09 10:32:52,437 fail2ban.server         [6531]: INFO    Starting Fail2ban v0.9.3
+Jul 09 10:32:52 byte-quiz fail2ban-client[6528]: 2018-07-09 10:32:52,437 fail2ban.server         [6531]: INFO    Starting in daemon mode
+Jul 09 10:32:52 byte-quiz systemd[1]: Started Fail2Ban Service.
+
+● firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:26:45 EDT; 6min ago
+lines 1-22...skipping...
+● fail2ban.service - Fail2Ban Service
+   Loaded: loaded (/lib/systemd/system/fail2ban.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:32:52 EDT; 32s ago
+     Docs: man:fail2ban(1)
+  Process: 6506 ExecStop=/usr/bin/fail2ban-client stop (code=exited, status=0/SUCCESS)
+  Process: 6528 ExecStart=/usr/bin/fail2ban-client -x start (code=exited, status=0/SUCCESS)
+ Main PID: 6533 (fail2ban-server)
+    Tasks: 7
+   Memory: 9.5M
+      CPU: 427ms
+   CGroup: /system.slice/fail2ban.service
+           └─6533 /usr/bin/python3 /usr/bin/fail2ban-server -s /var/run/fail2ban/fail2ban.sock -p /var/run/fail2ban/fail2ban.pid -x -b
+
+Jul 09 10:32:52 byte-quiz systemd[1]: Stopped Fail2Ban Service.
+Jul 09 10:32:52 byte-quiz systemd[1]: Starting Fail2Ban Service...
+Jul 09 10:32:52 byte-quiz fail2ban-client[6528]: 2018-07-09 10:32:52,437 fail2ban.server         [6531]: INFO    Starting Fail2ban v0.9.3
+Jul 09 10:32:52 byte-quiz fail2ban-client[6528]: 2018-07-09 10:32:52,437 fail2ban.server         [6531]: INFO    Starting in daemon mode
+Jul 09 10:32:52 byte-quiz systemd[1]: Started Fail2Ban Service.
+
+● firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:26:45 EDT; 6min ago
+ Main PID: 2831 (firewalld)
+lines 1-23...skipping...
+● fail2ban.service - Fail2Ban Service
+   Loaded: loaded (/lib/systemd/system/fail2ban.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:32:52 EDT; 32s ago
+     Docs: man:fail2ban(1)
+  Process: 6506 ExecStop=/usr/bin/fail2ban-client stop (code=exited, status=0/SUCCESS)
+  Process: 6528 ExecStart=/usr/bin/fail2ban-client -x start (code=exited, status=0/SUCCESS)
+ Main PID: 6533 (fail2ban-server)
+    Tasks: 7
+   Memory: 9.5M
+      CPU: 427ms
+   CGroup: /system.slice/fail2ban.service
+           └─6533 /usr/bin/python3 /usr/bin/fail2ban-server -s /var/run/fail2ban/fail2ban.sock -p /var/run/fail2ban/fail2ban.pid -x -b
+
+Jul 09 10:32:52 byte-quiz systemd[1]: Stopped Fail2Ban Service.
+Jul 09 10:32:52 byte-quiz systemd[1]: Starting Fail2Ban Service...
+Jul 09 10:32:52 byte-quiz fail2ban-client[6528]: 2018-07-09 10:32:52,437 fail2ban.server         [6531]: INFO    Starting Fail2ban v0.9.3
+Jul 09 10:32:52 byte-quiz fail2ban-client[6528]: 2018-07-09 10:32:52,437 fail2ban.server         [6531]: INFO    Starting in daemon mode
+Jul 09 10:32:52 byte-quiz systemd[1]: Started Fail2Ban Service.
+
+● firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:26:45 EDT; 6min ago
+ Main PID: 2831 (firewalld)
+    Tasks: 2
+lines 1-24...skipping...
+● fail2ban.service - Fail2Ban Service
+   Loaded: loaded (/lib/systemd/system/fail2ban.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:32:52 EDT; 32s ago
+     Docs: man:fail2ban(1)
+  Process: 6506 ExecStop=/usr/bin/fail2ban-client stop (code=exited, status=0/SUCCESS)
+  Process: 6528 ExecStart=/usr/bin/fail2ban-client -x start (code=exited, status=0/SUCCESS)
+ Main PID: 6533 (fail2ban-server)
+    Tasks: 7
+   Memory: 9.5M
+      CPU: 427ms
+   CGroup: /system.slice/fail2ban.service
+           └─6533 /usr/bin/python3 /usr/bin/fail2ban-server -s /var/run/fail2ban/fail2ban.sock -p /var/run/fail2ban/fail2ban.pid -x -b
+
+Jul 09 10:32:52 byte-quiz systemd[1]: Stopped Fail2Ban Service.
+Jul 09 10:32:52 byte-quiz systemd[1]: Starting Fail2Ban Service...
+Jul 09 10:32:52 byte-quiz fail2ban-client[6528]: 2018-07-09 10:32:52,437 fail2ban.server         [6531]: INFO    Starting Fail2ban v0.9.3
+Jul 09 10:32:52 byte-quiz fail2ban-client[6528]: 2018-07-09 10:32:52,437 fail2ban.server         [6531]: INFO    Starting in daemon mode
+Jul 09 10:32:52 byte-quiz systemd[1]: Started Fail2Ban Service.
+
+● firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:26:45 EDT; 6min ago
+ Main PID: 2831 (firewalld)
+    Tasks: 2
+   Memory: 17.2M
+      CPU: 1.716s
+   CGroup: /system.slice/firewalld.service
+           └─2831 /usr/bin/python3 -Es /usr/sbin/firewalld --nofork --nopid
+
+Jul 09 10:26:45 byte-quiz systemd[1]: Starting firewalld - dynamic firewall daemon...
+lines 1-30...skipping...
+● fail2ban.service - Fail2Ban Service
+   Loaded: loaded (/lib/systemd/system/fail2ban.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:32:52 EDT; 32s ago
+     Docs: man:fail2ban(1)
+  Process: 6506 ExecStop=/usr/bin/fail2ban-client stop (code=exited, status=0/SUCCESS)
+  Process: 6528 ExecStart=/usr/bin/fail2ban-client -x start (code=exited, status=0/SUCCESS)
+ Main PID: 6533 (fail2ban-server)
+    Tasks: 7
+   Memory: 9.5M
+      CPU: 427ms
+   CGroup: /system.slice/fail2ban.service
+           └─6533 /usr/bin/python3 /usr/bin/fail2ban-server -s /var/run/fail2ban/fail2ban.sock -p /var/run/fail2ban/fail2ban.pid -x -b
+
+Jul 09 10:32:52 byte-quiz systemd[1]: Stopped Fail2Ban Service.
+Jul 09 10:32:52 byte-quiz systemd[1]: Starting Fail2Ban Service...
+Jul 09 10:32:52 byte-quiz fail2ban-client[6528]: 2018-07-09 10:32:52,437 fail2ban.server         [6531]: INFO    Starting Fail2ban v0.9.3
+Jul 09 10:32:52 byte-quiz fail2ban-client[6528]: 2018-07-09 10:32:52,437 fail2ban.server         [6531]: INFO    Starting in daemon mode
+Jul 09 10:32:52 byte-quiz systemd[1]: Started Fail2Ban Service.
+
+● firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:26:45 EDT; 6min ago
+ Main PID: 2831 (firewalld)
+    Tasks: 2
+   Memory: 17.2M
+      CPU: 1.716s
+   CGroup: /system.slice/firewalld.service
+           └─2831 /usr/bin/python3 -Es /usr/sbin/firewalld --nofork --nopid
+
+Jul 09 10:26:45 byte-quiz systemd[1]: Starting firewalld - dynamic firewall daemon...
+Jul 09 10:26:45 byte-quiz systemd[1]: Started firewalld - dynamic firewall daemon.
+Jul 09 10:26:56 byte-quiz systemd[1]: Started firewalld - dynamic firewall daemon.
+
+● nginx.service - A high performance web server and a reverse proxy server
+lines 1-34...skipping...
+● fail2ban.service - Fail2Ban Service
+   Loaded: loaded (/lib/systemd/system/fail2ban.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:32:52 EDT; 32s ago
+     Docs: man:fail2ban(1)
+  Process: 6506 ExecStop=/usr/bin/fail2ban-client stop (code=exited, status=0/SUCCESS)
+  Process: 6528 ExecStart=/usr/bin/fail2ban-client -x start (code=exited, status=0/SUCCESS)
+ Main PID: 6533 (fail2ban-server)
+    Tasks: 7
+   Memory: 9.5M
+      CPU: 427ms
+   CGroup: /system.slice/fail2ban.service
+           └─6533 /usr/bin/python3 /usr/bin/fail2ban-server -s /var/run/fail2ban/fail2ban.sock -p /var/run/fail2ban/fail2ban.pid -x -b
+
+Jul 09 10:32:52 byte-quiz systemd[1]: Stopped Fail2Ban Service.
+Jul 09 10:32:52 byte-quiz systemd[1]: Starting Fail2Ban Service...
+Jul 09 10:32:52 byte-quiz fail2ban-client[6528]: 2018-07-09 10:32:52,437 fail2ban.server         [6531]: INFO    Starting Fail2ban v0.9.3
+Jul 09 10:32:52 byte-quiz fail2ban-client[6528]: 2018-07-09 10:32:52,437 fail2ban.server         [6531]: INFO    Starting in daemon mode
+Jul 09 10:32:52 byte-quiz systemd[1]: Started Fail2Ban Service.
+
+● firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:26:45 EDT; 6min ago
+ Main PID: 2831 (firewalld)
+    Tasks: 2
+   Memory: 17.2M
+      CPU: 1.716s
+   CGroup: /system.slice/firewalld.service
+           └─2831 /usr/bin/python3 -Es /usr/sbin/firewalld --nofork --nopid
+
+Jul 09 10:26:45 byte-quiz systemd[1]: Starting firewalld - dynamic firewall daemon...
+Jul 09 10:26:45 byte-quiz systemd[1]: Started firewalld - dynamic firewall daemon.
+Jul 09 10:26:56 byte-quiz systemd[1]: Started firewalld - dynamic firewall daemon.
+
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:29:19 EDT; 4min 5s ago
+ Main PID: 4805 (nginx)
+    Tasks: 2
+lines 1-38...skipping...
+● fail2ban.service - Fail2Ban Service
+   Loaded: loaded (/lib/systemd/system/fail2ban.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:32:52 EDT; 32s ago
+     Docs: man:fail2ban(1)
+  Process: 6506 ExecStop=/usr/bin/fail2ban-client stop (code=exited, status=0/SUCCESS)
+  Process: 6528 ExecStart=/usr/bin/fail2ban-client -x start (code=exited, status=0/SUCCESS)
+ Main PID: 6533 (fail2ban-server)
+    Tasks: 7
+   Memory: 9.5M
+      CPU: 427ms
+   CGroup: /system.slice/fail2ban.service
+           └─6533 /usr/bin/python3 /usr/bin/fail2ban-server -s /var/run/fail2ban/fail2ban.sock -p /var/run/fail2ban/fail2ban.pid -x -b
+
+Jul 09 10:32:52 byte-quiz systemd[1]: Stopped Fail2Ban Service.
+Jul 09 10:32:52 byte-quiz systemd[1]: Starting Fail2Ban Service...
+Jul 09 10:32:52 byte-quiz fail2ban-client[6528]: 2018-07-09 10:32:52,437 fail2ban.server         [6531]: INFO    Starting Fail2ban v0.9.3
+Jul 09 10:32:52 byte-quiz fail2ban-client[6528]: 2018-07-09 10:32:52,437 fail2ban.server         [6531]: INFO    Starting in daemon mode
+Jul 09 10:32:52 byte-quiz systemd[1]: Started Fail2Ban Service.
+
+● firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:26:45 EDT; 6min ago
+ Main PID: 2831 (firewalld)
+    Tasks: 2
+   Memory: 17.2M
+      CPU: 1.716s
+   CGroup: /system.slice/firewalld.service
+           └─2831 /usr/bin/python3 -Es /usr/sbin/firewalld --nofork --nopid
+
+Jul 09 10:26:45 byte-quiz systemd[1]: Starting firewalld - dynamic firewall daemon...
+Jul 09 10:26:45 byte-quiz systemd[1]: Started firewalld - dynamic firewall daemon.
+Jul 09 10:26:56 byte-quiz systemd[1]: Started firewalld - dynamic firewall daemon.
+
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:29:19 EDT; 4min 5s ago
+ Main PID: 4805 (nginx)
+    Tasks: 2
+   Memory: 3.4M
+      CPU: 20ms
+lines 1-40...skipping...
+● fail2ban.service - Fail2Ban Service
+   Loaded: loaded (/lib/systemd/system/fail2ban.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:32:52 EDT; 32s ago
+     Docs: man:fail2ban(1)
+  Process: 6506 ExecStop=/usr/bin/fail2ban-client stop (code=exited, status=0/SUCCESS)
+  Process: 6528 ExecStart=/usr/bin/fail2ban-client -x start (code=exited, status=0/SUCCESS)
+ Main PID: 6533 (fail2ban-server)
+    Tasks: 7
+   Memory: 9.5M
+      CPU: 427ms
+   CGroup: /system.slice/fail2ban.service
+           └─6533 /usr/bin/python3 /usr/bin/fail2ban-server -s /var/run/fail2ban/fail2ban.sock -p /var/run/fail2ban/fail2ban.pid -x -b
+
+Jul 09 10:32:52 byte-quiz systemd[1]: Stopped Fail2Ban Service.
+Jul 09 10:32:52 byte-quiz systemd[1]: Starting Fail2Ban Service...
+Jul 09 10:32:52 byte-quiz fail2ban-client[6528]: 2018-07-09 10:32:52,437 fail2ban.server         [6531]: INFO    Starting Fail2ban v0.9.3
+Jul 09 10:32:52 byte-quiz fail2ban-client[6528]: 2018-07-09 10:32:52,437 fail2ban.server         [6531]: INFO    Starting in daemon mode
+Jul 09 10:32:52 byte-quiz systemd[1]: Started Fail2Ban Service.
+
+● firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:26:45 EDT; 6min ago
+ Main PID: 2831 (firewalld)
+    Tasks: 2
+   Memory: 17.2M
+      CPU: 1.716s
+   CGroup: /system.slice/firewalld.service
+           └─2831 /usr/bin/python3 -Es /usr/sbin/firewalld --nofork --nopid
+
+Jul 09 10:26:45 byte-quiz systemd[1]: Starting firewalld - dynamic firewall daemon...
+Jul 09 10:26:45 byte-quiz systemd[1]: Started firewalld - dynamic firewall daemon.
+Jul 09 10:26:56 byte-quiz systemd[1]: Started firewalld - dynamic firewall daemon.
+
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:29:19 EDT; 4min 5s ago
+ Main PID: 4805 (nginx)
+    Tasks: 2
+   Memory: 3.4M
+      CPU: 20ms
+   CGroup: /system.slice/nginx.service
+           ├─4805 nginx: master process /usr/sbin/nginx -g daemon on; master_process on
+lines 1-42...skipping...
+● fail2ban.service - Fail2Ban Service
+   Loaded: loaded (/lib/systemd/system/fail2ban.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:32:52 EDT; 32s ago
+     Docs: man:fail2ban(1)
+  Process: 6506 ExecStop=/usr/bin/fail2ban-client stop (code=exited, status=0/SUCCESS)
+  Process: 6528 ExecStart=/usr/bin/fail2ban-client -x start (code=exited, status=0/SUCCESS)
+ Main PID: 6533 (fail2ban-server)
+    Tasks: 7
+   Memory: 9.5M
+      CPU: 427ms
+   CGroup: /system.slice/fail2ban.service
+           └─6533 /usr/bin/python3 /usr/bin/fail2ban-server -s /var/run/fail2ban/fail2ban.sock -p /var/run/fail2ban/fail2ban.pid -x -b
+
+Jul 09 10:32:52 byte-quiz systemd[1]: Stopped Fail2Ban Service.
+Jul 09 10:32:52 byte-quiz systemd[1]: Starting Fail2Ban Service...
+Jul 09 10:32:52 byte-quiz fail2ban-client[6528]: 2018-07-09 10:32:52,437 fail2ban.server         [6531]: INFO    Starting Fail2ban v0.9.3
+Jul 09 10:32:52 byte-quiz fail2ban-client[6528]: 2018-07-09 10:32:52,437 fail2ban.server         [6531]: INFO    Starting in daemon mode
+Jul 09 10:32:52 byte-quiz systemd[1]: Started Fail2Ban Service.
+
+● firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:26:45 EDT; 6min ago
+ Main PID: 2831 (firewalld)
+    Tasks: 2
+   Memory: 17.2M
+      CPU: 1.716s
+   CGroup: /system.slice/firewalld.service
+           └─2831 /usr/bin/python3 -Es /usr/sbin/firewalld --nofork --nopid
+
+Jul 09 10:26:45 byte-quiz systemd[1]: Starting firewalld - dynamic firewall daemon...
+Jul 09 10:26:45 byte-quiz systemd[1]: Started firewalld - dynamic firewall daemon.
+Jul 09 10:26:56 byte-quiz systemd[1]: Started firewalld - dynamic firewall daemon.
+
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:29:19 EDT; 4min 5s ago
+ Main PID: 4805 (nginx)
+    Tasks: 2
+   Memory: 3.4M
+      CPU: 20ms
+   CGroup: /system.slice/nginx.service
+           ├─4805 nginx: master process /usr/sbin/nginx -g daemon on; master_process on
+           └─4806 nginx: worker process
+lines 1-43...skipping...
+● fail2ban.service - Fail2Ban Service
+   Loaded: loaded (/lib/systemd/system/fail2ban.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:32:52 EDT; 32s ago
+     Docs: man:fail2ban(1)
+  Process: 6506 ExecStop=/usr/bin/fail2ban-client stop (code=exited, status=0/SUCCESS)
+  Process: 6528 ExecStart=/usr/bin/fail2ban-client -x start (code=exited, status=0/SUCCESS)
+ Main PID: 6533 (fail2ban-server)
+    Tasks: 7
+   Memory: 9.5M
+      CPU: 427ms
+   CGroup: /system.slice/fail2ban.service
+           └─6533 /usr/bin/python3 /usr/bin/fail2ban-server -s /var/run/fail2ban/fail2ban.sock -p /var/run/fail2ban/fail2ban.pid -x -b
+
+Jul 09 10:32:52 byte-quiz systemd[1]: Stopped Fail2Ban Service.
+● fail2ban.service - Fail2Ban Service
+   Loaded: loaded (/lib/systemd/system/fail2ban.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:32:52 EDT; 32s ago
+     Docs: man:fail2ban(1)
+  Process: 6506 ExecStop=/usr/bin/fail2ban-client stop (code=exited, status=0/SUCCESS)
+  Process: 6528 ExecStart=/usr/bin/fail2ban-client -x start (code=exited, status=0/SUCCESS)
+ Main PID: 6533 (fail2ban-server)
+    Tasks: 7
+   Memory: 9.5M
+      CPU: 427ms
+   CGroup: /system.slice/fail2ban.service
+           └─6533 /usr/bin/python3 /usr/bin/fail2ban-server -s /var/run/fail2ban/fail2ban.sock -p /var/run/fail2ban/fail2ban.pid -x -b
+
+● fail2ban.service - Fail2Ban Service
+   Loaded: loaded (/lib/systemd/system/fail2ban.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:32:52 EDT; 32s ago
+     Docs: man:fail2ban(1)
+  Process: 6506 ExecStop=/usr/bin/fail2ban-client stop (code=exited, status=0/SUCCESS)
+  Process: 6528 ExecStart=/usr/bin/fail2ban-client -x start (code=exited, status=0/SUCCESS)
+ Main PID: 6533 (fail2ban-server)
+    Tasks: 7
+   Memory: 9.5M
+      CPU: 427ms
+   CGroup: /system.slice/fail2ban.service
+           └─6533 /usr/bin/python3 /usr/bin/fail2ban-server -s /var/run/fail2ban/fail2ban.sock -p /var/run/fail2ban/fail2ban.pid -x -b
+
+Jul 09 10:32:52 byte-quiz systemd[1]: Stopped Fail2Ban Service.
+Jul 09 10:32:52 byte-quiz systemd[1]: Starting Fail2Ban Service...
+Jul 09 10:32:52 byte-quiz fail2ban-client[6528]: 2018-07-09 10:32:52,437 fail2ban.server         [6531]: INFO    Starting Fail2ban v0.9.3
+● fail2ban.service - Fail2Ban Service
+   Loaded: loaded (/lib/systemd/system/fail2ban.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:32:52 EDT; 32s ago
+     Docs: man:fail2ban(1)
+  Process: 6506 ExecStop=/usr/bin/fail2ban-client stop (code=exited, status=0/SUCCESS)
+  Process: 6528 ExecStart=/usr/bin/fail2ban-client -x start (code=exited, status=0/SUCCESS)
+ Main PID: 6533 (fail2ban-server)
+    Tasks: 7
+   Memory: 9.5M
+      CPU: 427ms
+● fail2ban.service - Fail2Ban Service
+   Active: active (running) since Mon 2018-07-09 10:32:52 EDT; 32s ago
+     Docs: man:fail2ban(1)
+  Process: 6506 ExecStop=/usr/bin/fail2ban-client stop (code=exited, status=0/SUCCESS)
+  Process: 6528 ExecStart=/usr/bin/fail2ban-client -x start (code=exited, status=0/SUCCESS)
+ Main PID: 6533 (fail2ban-server)
+    Tasks: 7
+   Memory: 9.5M
+      CPU: 427ms
+   CGroup: /system.slice/fail2ban.service
+           └─6533 /usr/bin/python3 /usr/bin/fail2ban-server -s /var/run/fail2ban/fail2ban.sock -p /var/run/fail2ban/fail2ban.pid -x -b
+
+Jul 09 10:32:52 byte-quiz systemd[1]: Stopped Fail2Ban Service.
+Jul 09 10:32:52 byte-quiz systemd[1]: Starting Fail2Ban Service...
+Jul 09 10:32:52 byte-quiz fail2ban-client[6528]: 2018-07-09 10:32:52,437 fail2ban.server         [6531]: INFO    Starting Fail2ban v0.9.3
+Jul 09 10:32:52 byte-quiz fail2ban-client[6528]: 2018-07-09 10:32:52,437 fail2ban.server         [6531]: INFO    Starting in daemon mode
+Jul 09 10:32:52 byte-quiz systemd[1]: Started Fail2Ban Service.
+
+● firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:26:45 EDT; 6min ago
+ Main PID: 2831 (firewalld)
+    Tasks: 2
+    Tasks: 2
+   Memory: 17.2M
+      CPU: 1.716s
+   CGroup: /system.slice/firewalld.service
+           └─2831 /usr/bin/python3 -Es /usr/sbin/firewalld --nofork --nopid
+
+Jul 09 10:26:45 byte-quiz systemd[1]: Starting firewalld - dynamic firewall daemon...
+Jul 09 10:26:45 byte-quiz systemd[1]: Started firewalld - dynamic firewall daemon.
+Jul 09 10:26:56 byte-quiz systemd[1]: Started firewalld - dynamic firewall daemon.
+
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:29:19 EDT; 4min 5s ago
+ Main PID: 4805 (nginx)
+    Tasks: 2
+   Memory: 3.4M
+      CPU: 20ms
+   CGroup: /system.slice/nginx.service
+           ├─4805 nginx: master process /usr/sbin/nginx -g daemon on; master_process on
+           └─4806 nginx: worker process
+
+Jul 09 10:29:19 byte-quiz systemd[1]: Starting A high performance web server and a reverse proxy server...
+Jul 09 10:29:19 byte-quiz systemd[1]: Started A high performance web server and a reverse proxy server.
+Jul 09 10:32:21 byte-quiz systemd[1]: Started A high performance web server and a reverse proxy server.
+
+● ntp.service - LSB: Start NTP daemon
+   Loaded: loaded (/etc/init.d/ntp; bad; vendor preset: enabled)
+   Active: active (running) since Mon 2018-07-09 10:28:08 EDT; 5min ago
+     Docs: man:systemd-sysv-generator(8)
+    Tasks: 1
+   Memory: 832.0K
+      CPU: 74ms
+   CGroup: /system.slice/ntp.service
+           └─4016 /usr/sbin/ntpd -p /var/run/ntpd.pid -g -u 112:116
+
+Jul 09 10:28:12 byte-quiz ntpd[4016]: Soliciting pool server 45.56.118.161
+Jul 09 10:28:13 byte-quiz ntpd[4016]: Soliciting pool server 140.82.7.153
+Jul 09 10:28:13 byte-quiz ntpd[4016]: Soliciting pool server 64.113.44.54
+Jul 09 10:28:13 byte-quiz ntpd[4016]: Soliciting pool server 35.171.237.77
+Jul 09 10:28:13 byte-quiz ntpd[4016]: Soliciting pool server 91.189.89.199
+Jul 09 10:28:13 byte-quiz ntpd[4016]: Soliciting pool server 66.135.44.92
+Jul 09 10:28:14 byte-quiz ntpd[4016]: Soliciting pool server 91.189.94.4
+Jul 09 10:28:14 byte-quiz ntpd[4016]: Soliciting pool server 104.171.118.254
+Jul 09 10:28:14 byte-quiz ntpd[4016]: Soliciting pool server 195.21.152.161
+Jul 09 10:28:14 byte-quiz ntpd[4016]: Soliciting pool server 173.255.206.154
+lines 25-68/68 (END)

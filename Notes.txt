@@ -340,15 +340,24 @@ getpeerinfo
 listpermissions issue
 issue 1V9BtbsjF9foqZVfmT3osVf2ezYcVtnB6CNNrv MechaCoin 1000 0.01
 
+grant 1Y6cEDoZuC4y1ZEUsNWwLyBaqsfwcq7WsHHc8B (server2 address) receive
+
+sendasset 1Y6cEDoZuC4y1ZEUsNWwLyBaqsfwcq7WsHHc8B mechacoin 1
+
+grant 1Y6cEDoZuC4y1ZEUsNWwLyBaqsfwcq7WsHHc8B (server2 address) mine
+listblocks -10
+
+listwallettransactions
 
 
 server2
-multichaind chain1@10.10.0.5:7425
+multichaind chain1@206.189.213.30:5749
+
+gettotalbalances
+listwallettransactions 1
+
+setruntimeparam miningturnover 1
 
 
 
-
-
-
-
-
+wc -l FILENAME >> Counts the number of words in a file.
