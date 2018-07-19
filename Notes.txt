@@ -361,3 +361,13 @@ setruntimeparam miningturnover 1
 
 
 wc -l FILENAME >> Counts the number of words in a file.
+
+
+
+Security Frameworks:
+HTTP Server >> SSL Labs
+
+Application Security: Metasploit, W3AF
+
+
+

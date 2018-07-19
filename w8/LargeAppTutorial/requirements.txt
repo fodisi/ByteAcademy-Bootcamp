@@ -1,0 +1,7 @@
+#env/bin/pip install flask
+#env/bin/pip install flask-sqlalchemy
+#env/bin/pip install flask-wtf
+
+flask
+flask-sqlalchemy
+flask-wtf
