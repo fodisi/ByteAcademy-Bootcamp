@@ -88,6 +88,7 @@ firewall-cmd --list-all
 hostname -I >> gets the IP
 
 firewall-cmd --add-port=80/tcp --permanent
+firewall-cmd --add-port=5000/tcp --permanent
 
 systemctl reload firewalld
 
